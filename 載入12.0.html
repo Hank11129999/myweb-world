@@ -1,0 +1,1583 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">    
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- JavaScript Bundle with Popper -->
+        <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>-->
+        <title>電腦 Computer</title>
+        <script language="JavaScript">
+            function startTime()   
+            {   
+                var today=new Date();//定義日期物件   
+                var yyyy = today.getFullYear();//通過日期物件的getFullYear()方法返回年    
+                var MM = today.getMonth()+1;//通過日期物件的getMonth()方法返回年    
+                var dd = today.getDate();//通過日期物件的getDate()方法返回年     
+                var hh=today.getHours();//通過日期物件的getHours方法返回小時   
+                var mm=today.getMinutes();//通過日期物件的getMinutes方法返回分鐘   
+                var ss=today.getSeconds();//通過日期物件的getSeconds方法返回秒   
+                // 如果分鐘或小時的值小於10，則在其值前加0，比如如果時間是下午3點20分9秒的話，則顯示15：20：09   
+                MM=checkTime(MM);
+                dd=checkTime(dd);
+                mm=checkTime(mm);   
+                ss=checkTime(ss);    
+                var day; //用於儲存星期（getDay()方法得到星期編號）
+                if(today.getDay()==0)   day   =   "星期日 " 
+                if(today.getDay()==1)   day   =   "星期一 " 
+                if(today.getDay()==2)   day   =   "星期二 " 
+                if(today.getDay()==3)   day   =   "星期三 " 
+                if(today.getDay()==4)   day   =   "星期四 " 
+                if(today.getDay()==5)   day   =   "星期五 " 
+                if(today.getDay()==6)   day   =   "星期六 " 
+                document.getElementById('nowDateTimeSpan').innerHTML=yyyy+"-"+MM +"-"+ dd +" " + hh+":"+mm+":"+ss+"   " + day;   
+                setTimeout('startTime()',1000);//每一秒中重新載入startTime()方法 
+            }   
+
+            function checkTime(i)   
+            {   
+                if (i<10){
+                    i="0" + i;
+                }   
+                  return i;
+            }  
+        </script>
+        <style>
+            .space_height-10 {
+                height: 10px;
+            }
+
+            .space_height-50 {
+                height: 50px;
+            }
+
+            .space_height-100 {
+                height: 100px;
+            }
+
+            .nav-space_height {
+                height: 60px;
+            }
+        </style>
+        <!-- Google 產品 -->
+        <style>
+            .card-img-top {
+                text-align: center;
+                margin: auto; /* 將圖片垂直置中 */
+                display: block; /* 讓margin: auto;生效 */
+                width: 80%;
+                max-height: 290px;
+                padding: 10px;
+            }
+
+            .btn-primary {
+                margin-top: 10px; /* 上邊距 */
+                margin-bottom: 10px; /* 下邊距 */
+                margin-left: 5px; /* 左邊距 */
+                margin-right: 5px; /* 右邊距 */
+            }
+
+            /* 點擊product時顯示圓角外框 */
+            .glue-inline-link,
+            .glue-link,
+            .product-link {
+                background: 0 0;
+                border-radius: 4px;
+                color: #1a73e8;
+                forced-color-adjust: none;
+                display: inline;
+                overflow: hidden;
+                text-decoration: underline;
+                -webkit-transition: background-color .2s, color .2s;
+                -o-transition: background-color .2s, color .2s;
+                transition: background-color .2s, color .2s
+            }
+
+            /* 點擊product時顯示外框 */
+            .glue-inline-link:focus,
+            .glue-link:focus,
+            .product-link:focus {
+                background-color: rgba(26, 115, 232, .12);
+                -webkit-box-shadow: 0 0 0 2px #1a73e8;
+                box-shadow: 0 0 0 2px #1a73e8
+            }
+
+            /* 每四個product換行 (product排版) */
+            @supports (display:grid) {
+                .glue-grid {
+                    display: grid;
+                    grid-column-gap: 28px;
+                    grid-template-columns: repeat(4, minmax(5px, 1fr))
+                }
+            }
+
+            /* 尚未點擊product或glue-headline時文字為黑色 */
+            .glue-headline,
+            .modules-lib__markdown-block h1,
+            .modules-lib__markdown-block h2,
+            .modules-lib__markdown-block h3,
+            .modules-lib__markdown-block h4,
+            .modules-lib__markdown-block h5,
+            .modules-lib__markdown-block h6 {
+                font-family: "Google Sans Display", Arial, Helvetica, sans-serif;
+                color: #202124
+            }
+
+            /* 網頁尺寸為600px時排版 */
+            @media (min-width:600px) {
+
+                .glue-footer__global,
+                .glue-footer__site-links,
+                .glue-footer__upper,
+                .glue-page {
+                    margin: 0 40px
+                }
+            }
+
+            /* 網頁尺寸為1024px時排版 */
+            @media (min-width:1024px) {
+
+                .glue-footer__global,
+                .glue-footer__site-links,
+                .glue-footer__upper,
+                .glue-page {
+                    margin: 0 72px
+                }
+            }
+
+            /* 網頁尺寸為1440px時排版 */
+            @media (min-width:1440px) {
+
+                .glue-footer__global,
+                .glue-footer__site-links,
+                .glue-footer__upper,
+                .glue-page {
+                    margin: 0 auto;
+                    max-width: 1296px
+                }
+            }
+
+            /* 分隔線 */
+            .product {
+                border-top: 1px solid #dadce0;
+                padding-bottom: 2px
+            }
+
+            /* product內部對齊 */
+            .product .product-wrapper {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-pack: start;
+                -ms-flex-pack: start;
+                justify-content: flex-start;
+                text-decoration: none;
+                padding: 16px 0 16px 0;
+                width: 100%
+            }
+
+            /* 避免點擊完product背景變成藍色 */
+            .product .product-wrapper:focus {
+                background: 0 0;
+                outline: 2px solid transparent
+            }
+
+            /* 點擊glue-headline文字變成藍色 */
+            .product .product-wrapper:focus .glue-headline {
+                color: #1967d2
+            }
+
+            /* glue-headline文字大小 */
+            .product .product-wrapper>p {
+                font-size: 18px
+            }
+
+
+            /* product內文字對齊圖片 */
+            .product .glue-headline {
+                margin-bottom: auto;
+                margin-left: 16px;
+                margin-top: auto
+            }
+
+            /* 設定product大小 */
+            .product .product-logo {
+                height: 40px;
+                margin: auto 0;
+                width: 40px
+            }
+        </style>
+        <!-- Apple 產品 -->
+        <style>
+            #menu {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #D0D0D0;
+                display: flex;
+                justify-content: center;
+            }
+
+            .menu-item {
+                display: inline-block;
+                margin: 10px;
+            }
+
+            .menu-link {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #333;
+                text-align: center;
+                padding: 15px 40px;
+                text-decoration: none;
+                background-color: #ddd;
+                color: #333;
+                border-radius: 10px;
+            }
+
+            .menu-link:hover {
+                background-color: #aaa;
+            }
+
+            .active {
+                background-color: #4CAF50;
+                color: white;
+            }
+
+            .content {
+                display: none;
+            }
+
+            .data_area {
+                width: 95%;
+                padding: 10px;
+                display: block;
+                margin: auto;
+            }
+            
+            
+        </style>
+        <!--導覽列-->
+        <style>
+            .navbar {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 1;
+            }
+        </style>
+        <style>
+            .navbar-nav li:hover>ul.dropdown-menu {
+                display: block;
+            }
+            
+            .dropdown-submenu {
+                position: relative;
+            }
+            
+            .dropdown-submenu>.dropdown-menu {
+                top: 0%;
+                left: 100%;
+                margin-top: -3px;
+            }
+            
+            .dropdown-menu>li>a:hover:after {
+                transform: rotate(-90deg);
+                transition: 1s;
+            }
+        </style>
+        <style>
+
+            /* 媒體查詢：手機屏幕 */
+            @media (max-width: 767px) {
+                img {
+                    width: 750px;
+                }
+            }
+
+            /* 媒體查詢：平板屏幕 */
+            @media (min-width: 768px) and (max-width: 991px) {
+                img {
+                    width: 980px;
+                }
+            }
+
+            /* 媒體查詢：桌面屏幕 */
+            @media (min-width: 992px) {
+                img {
+                    width: 1500px;
+                }
+            }
+        </style>
+        <style type="text/css">
+            /* 旋轉動畫 */
+            @keyframes rotateAnimation {
+                to {
+                    transform: rotate(1turn);
+                }
+            }
+
+            /* 彈性伸縮動畫 */
+            @keyframes stretchAnimation {
+                0% {
+                    stroke-dasharray: 1, 200;
+                    stroke-dashoffset: 0;
+                }
+                50% {
+                    stroke-dasharray: 90, 200;
+                    stroke-dashoffset: -35px;
+                }
+                to {
+                    stroke-dashoffset: -124px;
+                }
+            }
+
+            /* 圓環容器樣式 */
+            .Ring-container {
+                /* 使用變數設定旋轉動畫速度、圓環大小、和顏色 */
+                animation: rotateAnimation var(--animation-speed) linear infinite;
+                height: var(--ring-size);
+                transform-origin: center;
+                vertical-align: middle;
+                width: var(--ring-size);
+                will-change: transform;
+            }
+
+            /* 圓環樣式 */
+            .Ring-container circle {
+                fill: none;
+                stroke: var(--ring-color);
+                stroke-dasharray: 1, 200;
+                stroke-dashoffset: 0;
+                stroke-linecap: round;
+                /* 使用變數設定彈性伸縮動畫的速度 */
+                animation: stretchAnimation calc(var(--animation-speed) * 0.75) ease-in-out infinite;
+                will-change: stroke-dasharray, stroke-dashoffset;
+            }
+
+            .circle-center {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -300%);
+            }
+
+        </style>
+    </head>
+    <body>
+        <!-- 導覽列 -->
+        <nav class="navbar navbar-light bg-light navbar-expand-md">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">電腦初始化</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar1">
+                <span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbar1">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link" onclick="showPage('home')">首頁</a></li>
+                        <li class="nav-item"><a class="nav-link" onclick="showPage('google')">Google 產品</a></li>
+                        <li class="nav-item"><a class="nav-link" onclick="showPage('apple')">Apple 產品</a></li>
+                        <!-- 下拉式選單 Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Apple</a>
+                            <!-- 下拉式選單選項 Dropdown items -->
+                            <ul class="dropdown-menu">
+                                <!--
+                                <li><a class="dropdown-item" href="#">Mac</a></li>
+                                <li><a class="dropdown-item" href="#">iPad</a></li>
+                                <li><a class="dropdown-item" href="#">iPhone</a></li>
+                                <li><a class="dropdown-item" href="#">Watch</a></li>
+                                <li><a class="dropdown-item" href="#">AirPods</a></li>
+                                <li><a class="dropdown-item" href="#">TV 和家庭</a></li>
+                                -->
+
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle">商店</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" onclick="showPage('Shop-the_Latest')">選購最新產品</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('Store-Mac')">Mac</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('Store-iPad')">iPad</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('Store-iPhone')">iPhone</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('Store-Apple_Watch')">Apple Watch</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('Store-Accessories')">配件</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle">Mac</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" onclick="showPage('Explore_all-Mac')">探索所有 Mac</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('Macbook-Air')">Macbook Air</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('Macbook-Pro')">Macbook Pro</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('iMac')">iMac</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('Mac-mini')">Mac mini</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('Mac-studio')">Mac studio</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('Mac-Pro')">Mac Pro</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('Display')">顯示器</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle">iPad</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" onclick="showPage('Explore_all-iPad')">探索所有 iPad</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('iPad-Pro')">iPad Pro</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('iPad-Air')">iPad Air</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('iPad')">iPad</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('iPad-mini')">iPad mini</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('Apple_Pencil')">Apple Pencil</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('Keyboard')">鍵盤</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle">iPhone</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" onclick="showPage('Explore_all-iPhone')">探索所有 iPhone</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('iPhone-15_Pro')">iPhone 15 Pro</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('iPhone-15')">iPhone 15</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('iPhone-14')">iPhone 14</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('iPhone-13')">iPhone 13</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('iPhone-SE')">iPhone SE</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle">Watch</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" onclick="showPage('Explore_all-Apple_Watch')">探索所有 Apple Watch</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('Apple_Watch-Series_9')">Apple Watch Series 9</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('Apple_Watch-Ultra_2')">Apple Watch Ultra 2</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('Apple_Watch-SE')">Apple Watch SE</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('Apple_Watch-Nick')">Apple Watch Nick</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('Apple_Watch-Hermès')">Apple Watch Hermès</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle">AirPods</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" onclick="showPage('Explore_all-AirPods')">探索所有 AirPods</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('AirPods-Pro-2nd_Gen')">AirPods Pro 第 2 代</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('AirPods-2nd_Gen')">AirPods 第 2 代</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('AirPods-3rd_Gen')">AirPods 第 3 代</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('AirPods-Max')">AirPods Max</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle">TV 和家庭</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" onclick="showPage('Explore-TV_and-Home')">探索 TV 和家庭</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('Apple_TV-4K')">Apple TV 4K</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('HomePod')">HomePod</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('HomePod-mini')">HomePod mini</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle">娛樂</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" onclick="showPage('Explore-Entertainment')">探索娛樂</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('Entertainment_Apple_One')">Apple One</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('Entertainment_Apple_TV+')">Apple TV+</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('Entertainment_Apple_Music')">Apple Music</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('Entertainment_Apple_Arcade')">Apple Arcade</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('Entertainment_Apple_Fitness+')">Apple Fitness+</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('Entertainment_Apple_News+')">Apple News+</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('Entertainment_Apple_Podcasts')">Apple Podcast</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('Entertainment_Apple_Books')">Apple Books</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('Entertainment_App_Store')">App Store</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle">配件</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" onclick="showPage('Shop-All_Accessories')">選購各款配件</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('Accessories-Mac')">Mac</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('Accessories-iPad')">iPad</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('Accessories-iPhone')">iPhone</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('Accessories-Apple_Watch')">Apple Watch</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('Accessories-AirPods')">AirPods</a></li>
+                                        <li><a class="dropdown-item" onclick="showPage('Accessories-TV_&_Home')">TV 和家庭</a></li>
+                                    </ul>
+                                </li>
+                                
+                                <!--
+                                繼續增加
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle"></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item"></a></li>
+                                        <li><a class="dropdown-item"></a></li>
+                                        <li><a class="dropdown-item"></a></li>
+                                        <li><a class="dropdown-item"></a></li>
+                                    </ul>
+                                </li>
+                                -->
+                            </ul>
+                        </li>
+                    </ul>		  
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="輸入景點">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <div class="nav-space_height"></div>
+
+    <!-- 背景填滿整個網頁的div元素 -->
+    <div style="width: 100vw; height: 100vh; background-color: #ffffff; position: absolute; display: block; z-index: 2;" id="loading">
+        <div class="circle-center">
+            <!-- SVG 圓環元素，套用上面定義的樣式 -->
+            <svg height="50" width="50" class="Ring-container" viewBox="25 25 50 50"
+                style="--ring-size: 50px; --ring-color: black; --animation-speed: 2s;">
+                <circle cx="50" cy="50" r="20" stroke-width="5"></circle>
+            </svg>
+        </div>
+    </div>
+
+        <!-- 商店 -->
+        <div id="Shop-the_Latest" style="display:none;">
+            <!-- 選購最新產品  -->
+            <img src="https://imgur.com/NMSskA2.jpg" alt="">
+        </div>
+        <div id="Store-Mac" style="display:none;">
+            <!-- Mac -->
+            <img src="https://imgur.com/CGUUOTl.jpg" alt="">
+        </div>
+        <div id="Store-iPad" style="display:none;">
+            <!-- iPad -->
+            <img src="https://imgur.com/5KIA22M.jpg" alt="">
+        </div>
+        <div id="Store-iPhone" style="display:none;">
+            <!-- iPhone -->
+            <img src="https://imgur.com/Djv6mBu.jpg" alt="">
+        </div>
+        <div id="Store-Apple_Watch" style="display:none;">
+            <!-- Apple Watch -->
+            <img src="https://imgur.com/x2dEyG3.jpg" alt="">
+        </div>
+        <div id="Store-Accessories" style="display:none;">
+            <!-- 配件 -->
+            <img src="https://imgur.com/e7OXhCA.jpg" alt="">
+        </div>
+
+
+        <!--Mac-->
+        <div id="Explore_all-Mac" style="display:none;">
+            <!-- 探索所有 Mac -->
+            <img src="https://imgur.com/43j0GVr.jpg" alt="">
+        </div>
+        <div id="Macbook-Air" style="display:none;">
+            <!-- Macbook Air -->
+            <img src="https://imgur.com/QKlCw2A.jpg" alt="">
+        </div>
+        <div id="Macbook-Pro" style="display:none;">
+            <!-- Macbook Pro -->
+            <img src="https://imgur.com/TGpYPru.jpg" alt="">
+        </div>
+        <div id="iMac" style="display:none;">
+            <!-- iMac -->
+            <img src="https://imgur.com/YybR4Lc.jpg" alt="">
+        </div>
+        <div id="Mac-mini" style="display:none;">
+            <!-- Mac mini -->
+            <img src="https://imgur.com/lwjkZnm.jpg" alt="">
+        </div>
+        <div id="Mac-studio" style="display:none;">
+            <!-- Mac studio -->
+            <img src="https://imgur.com/LpLoZDB.jpg" alt="">
+        </div>
+        <div id="Mac-Pro" style="display:none;">
+            <!-- Mac Pro -->
+            <img src="https://imgur.com/OCUzJnc.jpg" alt="">
+        </div>
+        <div id="Display" style="display:none;">
+            <!-- Display -->
+            <img src="https://imgur.com/iMtcLa3.jpg" alt="">
+        </div>
+
+
+        <!--iPad-->
+        <div id="Explore_all-iPad" style="display:none;">
+            <!-- 探索所有 iPad -->
+            <img src="https://imgur.com/o06YeHG.jpg" alt="">
+        </div>
+        <div id="iPad-Pro" style="display:none;">
+            <!-- iPad Pro -->
+            <img src="https://imgur.com/vjvoPaO.jpg" alt="">
+        </div>
+        <div id="iPad-Air" style="display:none;">
+            <!-- iPad Air -->
+            <img src="https://imgur.com/o753zz8.jpg" alt="">
+        </div>
+        <div id="iPad" style="display:none;">
+            <!-- iPad -->
+            <img src="https://imgur.com/N9A1kvf.jpg" alt="">
+        </div>
+        <div id="iPad-mini" style="display:none;">
+            <!-- iPad mini -->
+            <img src="https://imgur.com/YfClHuw.jpg" alt="">
+        </div>
+        <div id="Apple_Pencil" style="display:none;">
+            <!-- Apple Pencil -->
+            <img src="https://imgur.com/KLAl5LH.jpg" alt="">
+        </div>
+        <div id="Keyboard" style="display:none;">
+            <!-- Keyboard -->
+            <img src="https://imgur.com/WJrJNNG.jpg" alt="">
+        </div>
+
+
+        <!--iPhone-->
+        <div id="Explore_all-iPhone" style="display:none;">
+            <!-- 探索所有 iPhone -->
+            <img src="https://imgur.com/v4vu0xd.jpg" alt="">
+        </div>
+        <div id="iPhone-15_Pro" style="display:none;">
+            <!-- iPhone 15 Pro -->
+            <img src="https://imgur.com/i9OWEtc.jpg" alt="">
+        </div>
+        <div id="iPhone-15" style="display:none;">
+            <!-- iPhone 15 -->
+            <img src="https://imgur.com/pk7KSkG.jpg" alt="">
+        </div>
+        <div id="iPhone-14" style="display:none;">
+            <!-- iPhone 14 -->
+            <img src="https://imgur.com/RVEeCZY.jpg" alt="">
+        </div>
+        <div id="iPhone-13" style="display:none;">
+            <!-- iPhone 13 -->
+            <img src="https://imgur.com/L0vezU4.jpg" alt="">
+        </div>
+        <div id="iPhone-SE" style="display:none;">
+            <!-- iPhone SE -->
+            <img src="https://imgur.com/NnWvDcG.jpg" alt="">
+        </div>
+
+
+        <!--Watch-->
+        <div id="Explore_all-Apple_Watch" style="display:none;">
+            <!-- 探索所有 Apple Watch -->
+            <img src="https://imgur.com/3yuXJ6x.jpg" alt="">
+        </div>
+        <div id="Apple_Watch-Series_9" style="display:none;">
+            <!-- Apple Watch Series 9 -->
+            <img src="https://imgur.com/29a82KS.jpg" alt="">
+        </div>
+        <div id="Apple_Watch-Ultra_2" style="display:none;">
+            <!-- Apple Watch Ultra 2 -->
+            <img src="https://imgur.com/b1CCiwd.jpg" alt="">
+        </div>
+        <div id="Apple_Watch-SE" style="display:none;">
+            <!-- Apple Watch SE -->
+            <img src="https://imgur.com/C9sU3Sd.jpg" alt="">
+        </div>
+        <div id="Apple_Watch-Nick" style="display:none;">
+            <!-- Apple Watch Nick -->
+            <img src="https://imgur.com/4rgJ6Pb.jpg" alt="">
+        </div>
+        <div id="Apple_Watch-Hermès" style="display:none;">
+            <!-- Apple Watch Hermès -->
+            <img src="https://imgur.com/c8GgAnK.jpg" alt="">
+        </div>
+
+
+        <!--AirPods-->
+        <div id="Explore_all-AirPods" style="display:none;">
+            <!-- 探索所有 AirPods -->
+            <img src="https://imgur.com/bU5vFs4.jpg" alt="">
+        </div>
+        <div id="AirPods-Pro-2nd_Gen" style="display:none;">
+            <!-- AirPods Pro 第二代 -->
+            <img src="https://imgur.com/Svkqb0I.jpg" alt="">
+        </div>
+        <div id="AirPods-2nd_Gen" style="display:none;">
+            <!-- AirPods 第二代 -->
+            <img src="https://imgur.com/q9AwU7q.jpg" alt="">
+        </div>
+        <div id="AirPods-3rd_Gen" style="display:none;">
+            <!-- AirPods 第三代 -->
+            <img src="https://imgur.com/8wyRaF5.jpg" alt="">
+        </div>
+        <div id="AirPods-Max" style="display:none;">
+            <!-- AirPods Max -->
+            <img src="https://imgur.com/ffxjcYj.jpg" alt="">
+        </div>
+
+
+        <!--TV 和家庭-->
+        <div id="Explore-TV_and-Home" style="display:none;">
+            <!-- 探索所有 TV 和家庭 -->
+            <img src="https://imgur.com/Oeg8II4.jpg" alt="">
+        </div>
+        <div id="Apple_TV-4K" style="display:none;">
+            <!-- Apple TV 4K -->
+            <img src="https://imgur.com/SjeTSeR.jpg" alt="">
+        </div>
+        <div id="HomePod" style="display:none;">
+            <!-- HomePod -->
+            <img src="https://imgur.com/aB6Xk22.jpg" alt="">
+        </div>
+        <div id="HomePod-mini" style="display:none;">
+            <!-- HomePod mini -->
+            <img src="https://imgur.com/BcaOwFn.jpg" alt="">
+        </div>
+
+
+        <!-- 娛樂 -->
+        <div id="Explore-Entertainment" style="display:none;">
+            <!-- 探索娛樂  -->
+            <img src="https://imgur.com/Sk3lnd6.jpg" alt="">
+        </div>
+        <div id="Entertainment_Apple_One" style="display:none;">
+            <!-- Apple One -->
+            <img src="https://imgur.com/Cjthupj.jpg" alt="">
+        </div>
+        <div id="Entertainment_Apple_TV+" style="display:none;">
+            <!-- Apple TV+ -->
+            <img src="https://imgur.com/u0BtxYG.jpg" alt="">
+        </div>
+        <div id="Entertainment_Apple_Music" style="display:none;">
+            <!-- Apple Music -->
+            <img src="https://imgur.com/QxvY9pv.jpg" alt="">
+        </div>
+        <div id="Entertainment_Apple_Arcade" style="display:none;">
+            <!-- Apple Arcade -->
+            <img src="https://imgur.com/LA6iCkM.jpg" alt="">
+        </div>
+        <div id="Entertainment_Apple_Fitness+" style="display:none;">
+            <!-- Apple Fitness+ -->
+            <img src=".jpg" alt="">
+        </div>
+        <div id="Entertainment_Apple_News+" style="display:none;">
+            <!-- Apple News+ -->
+            <img src=".jpg" alt="">
+        </div>
+        <div id="Entertainment_Apple_Podcasts" style="display:none;">
+            <!-- Apple Podcast -->
+            <img src="https://imgur.com/9oKaCeq.jpg" alt="">
+        </div>
+        <div id="Entertainment_Apple_Books" style="display:none;">
+            <!-- Apple Books -->
+            <img src="https://imgur.com/bDyOPX5.jpg" alt="">
+        </div>
+        <div id="Entertainment_App_Store" style="display:none;">
+            <!-- App Store -->
+            <img src="https://imgur.com/ADtlinq.jpg" alt="">
+        </div>
+
+
+        <!-- 配件 -->
+        <div id="Shop-All_Accessories" style="display:none;">
+            <!-- 選購各款配件  -->
+            <img src="https://imgur.com/FZlLqUb.jpg" alt="">
+        </div>
+        <div id="Accessories-Mac" style="display:none;">
+            <!-- Mac -->
+            <img src="https://imgur.com/SLX3Os0.jpg" alt="">
+        </div>
+        <div id="Accessories-iPad" style="display:none;">
+            <!-- iPad -->
+            <img src="https://imgur.com/pjX342M.jpg" alt="">
+        </div>
+        <div id="Accessories-iPhone" style="display:none;">
+            <!-- iPhone -->
+            <img src="https://imgur.com/b8WwG9R.jpg" alt="">
+        </div>
+        <div id="Accessories-Apple_Watch" style="display:none;">
+            <!-- Apple Watch -->
+            <img src="https://imgur.com/jCzZcWn.jpg" alt="">
+        </div>
+        <div id="Accessories-AirPods" style="display:none;">
+            <!-- AirPods -->
+            <img src="https://imgur.com/Yc4MQdM.jpg" alt="">
+        </div>
+        <div id="Accessories-TV_&_Home" style="display:none;">
+            <!-- TV 和家庭 -->
+            <img src="https://imgur.com/WfSeiOp.jpg" alt="">
+        </div>
+
+
+
+        <div id="home" style="display:none;">
+            這是首頁
+            <!-- 應用程式 Apps 卡片 -->
+            <div id="apps" class="row">
+                <div class="col-sm-6 col-md-3">
+                    <div class="card mb-3">
+                        <img class="card-img-top" src="https://i.imgur.com/GC47XP7.png">            
+                        <div class="card-body">
+                            <h5 class="card-title">Google Chrome</h5>
+                            <p class="card-text"></p>
+                            <a href="https://www.google.com/intl/zh-tw/chrome/" target="_blank" class="btn btn-primary">官網下載</a>
+                            <a href="https://www.google.com/intl/zh-HK/chrome/" target="_blank" class="btn btn-primary">Microsoft商店下載</a>
+                            <a href="" target="_blank" class="btn btn-primary">直接下載</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="card mb-3">
+                        <img class="card-img-top" src="https://i.imgur.com/05A52CX.png">            
+                        <div class="card-body">
+                            <h5 class="card-title">Microsoft Edge Browser</h5>
+                            <p class="card-text"></p>
+                            <a href="https://www.microsoft.com/zh-tw/edge/download/" target="_blank" class="btn btn-primary">官網下載</a>
+                            <a href="https://apps.microsoft.com/detail/microsoft-edge-browser/XPFFTQ037JWMHS?hl=zh-tw&gl=TW" target="_blank" class="btn btn-primary">Microsoft商店下載</a>
+                            <a href="https://go.microsoft.com/fwlink/?linkid=2109047&Channel=Stable&language=zh-tw" target="_blank" class="btn btn-primary">直接下載</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="card mb-3">
+                        <img class="card-img-top" src="https://i.imgur.com/yn3ouJj.png">            
+                        <div class="card-body">
+                            <h5 class="card-title">Office</h5>
+                            <p class="card-text"></p>
+                            <a href="https://www.office.com/" target="_blank" class="btn btn-primary">官網下載</a>
+                            <a href="https://apps.microsoft.com/detail/microsoft-365-(office)/9WZDNCRD29V9?hl=zh-tw&gl=TW" target="_blank" class="btn btn-primary">Microsoft商店下載</a>
+                            <a href="https://c2rsetup.officeapps.live.com/c2r/download.aspx?productReleaseID=O365ProPlusRetail&platform=Def&language=zh-tw" target="_blank" class="btn btn-primary">直接下載</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="card mb-3">
+                        <img class="card-img-top" src="https://i.imgur.com/XuqHSQu.png">            
+                        <div class="card-body">
+                            <h5 class="card-title">FaceBook</h5>
+                            <p class="card-text"></p>
+                            <a href="" target="_blank" class="btn btn-primary">官網下載</a>
+                            <a href="https://apps.microsoft.com/detail/Facebook/9WZDNCRFJ2WL?hl=zh-tw&gl=TW" target="_blank" class="btn btn-primary">Microsoft商店下載</a>
+                            <a href="" target="_blank" class="btn btn-primary">直接下載</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="card mb-3">
+                        <img class="card-img-top" src="https://i.imgur.com/gHmpQjl.png">            
+                        <div class="card-body">
+                            <h5 class="card-title">Messenger</h5>
+                            <p class="card-text"></p>
+                            <a href="https://www.facebook.com/help/852837148154446" target="_blank" class="btn btn-primary">官網下載</a>
+                            <a href="https://apps.microsoft.com/detail/Messenger/9WZDNCRF0083?hl=zh-tw&gl=TW" target="_blank" class="btn btn-primary">Microsoft商店下載</a>
+                            <a href="https://www.messenger.com/desktop/?fbclid=IwAR2ZsLydTANR21ikKU-eaxo8Ilekh9EJOClZFINDnrd3rTEIpfDDFZfcluI#startDownload" target="_blank" class="btn btn-primary">直接下載</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="card mb-3">
+                        <img class="card-img-top" src="https://i.imgur.com/oOmpcJY.png">            
+                        <div class="card-body">
+                            <h5 class="card-title">LINE</h5>
+                            <p class="card-text"></p>
+                            <a href="https://line.me/" target="_blank" class="btn btn-primary">官網下載</a>
+                            <a href="https://apps.microsoft.com/detail/LINE%20Desktop/XPFCC4CD725961?hl=zh-tw&gl=TW" target="_blank" class="btn btn-primary">Microsoft商店下載</a>
+                            <a href="https://desktop.line-scdn.net/win/new/LineInst.exe" target="_blank" class="btn btn-primary">直接下載</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="card mb-3">
+                        <img class="card-img-top" src="https://i.imgur.com/bDbEFhV.png">            
+                        <div class="card-body">
+                            <h5 class="card-title">Visual Stdio Code</h5>
+                            <p class="card-text"></p>
+                            <a href="https://code.visualstudio.com/" target="_blank" class="btn btn-primary">官網下載</a>
+                            <a href="https://apps.microsoft.com/detail/Visual%20Studio%20Code/XP9KHM4BK9FZ7Q?hl=zh-tw&gl=TW" target="_blank" class="btn btn-primary">Microsoft商店下載</a>
+                            <a href="https://code.visualstudio.com/Download" target="_blank" class="btn btn-primary">直接下載</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="card mb-3">
+                        <img class="card-img-top" src="https://imgur.com/RjEV5qe.png">            
+                        <div class="card-body">
+                            <h5 class="card-title">iCloud</h5>
+                            <p class="card-text"></p>
+                            <a href="https://support.apple.com/zh-tw/HT204283" target="_blank" class="btn btn-primary">官網下載</a>
+                            <a href="https://apps.microsoft.com/detail/9PKTQ5699M62?hl=zh-tw&gl=TW" target="_blank" class="btn btn-primary">Microsoft商店下載</a>
+                            <a href="https://apps.microsoft.com/detail/9PKTQ5699M62?hl=zh-tw&gl=TW" target="_blank" class="btn btn-primary">直接下載</a>
+                        </div>
+                    </div>
+                </div>
+                <!--
+                <a href="" target="_blank" class="btn btn-primary">官網下載</a>
+                <a href="" target="_blank" class="btn btn-primary">Microsoft商店下載</a>
+                <a href="" target="_blank" class="btn btn-primary">直接下載</a>-->
+            </div>
+        </div>
+        <div id="google" style="display:none;">
+            這是Google的分頁
+            <h1 style="text-align: center;">Google 產品</h1>
+            <section id="all-products" class="glue-page">
+                <div class="glue-grid product-grid__grid">
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-android_os" data-g-module_name="Product Tile" data-g-module_id="android_os">
+                        <a class="product-link product-wrapper android_os" target="_blank" href="https://www.android.com/intl/en_us/" data-g-cta_type="module" data-g-cta_text="Android" data-g-cta_url="https://www.android.com/intl/en_us/" tabindex="null" data-g-module_position="2/72">
+                        <img src="https://i.imgur.com/5SGb8PF.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Android</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-android_auto" data-g-module_name="Product Tile" data-g-module_id="android_auto">
+                        <a class="product-link product-wrapper android_auto" target="_blank" href="https://www.android.com/intl/en_us/auto/" data-g-cta_type="module" data-g-cta_text="Android Auto" data-g-cta_url="https://www.android.com/intl/en_us/auto/" tabindex="null" data-g-module_position="3/72">
+                        <img src="https://imgur.com/leBh6xa.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Android Auto</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-android-tv" data-g-module_name="Product Tile" data-g-module_id="android-tv">
+                        <a class="product-link product-wrapper android-tv" target="_blank" href="https://www.android.com/tv/" data-g-cta_type="module" data-g-cta_text="Android TV" data-g-cta_url="https://www.android.com/tv/" tabindex="null" data-g-module_position="4/72">
+                        <img src="https://imgur.com/QqIf8wD.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Android TV</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-bard" data-g-module_name="Product Tile" data-g-module_id="bard">
+                        <a class="product-link product-wrapper bard" target="_blank" href="https://bard.google.com/?utm_source=googledevs&amp;utm_medium=owned&amp;utm_campaign=about-allproducts" data-g-cta_type="module" data-g-cta_text="Bard" data-g-cta_url="https://bard.google.com/?utm_source=googledevs&amp;utm_medium=owned&amp;utm_campaign=about-allproducts" tabindex="null" data-g-module_position="5/72">
+                        <img src="https://imgur.com/p9NkcYt.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Bard</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-chrome" data-g-module_name="Product Tile" data-g-module_id="chrome">
+                        <a class="product-link product-wrapper chrome" target="_blank" href="https://www.google.com/chrome/" data-g-cta_type="module" data-g-cta_text="Chrome" data-g-cta_url="https://www.google.com/chrome/" tabindex="null" data-g-module_position="6/72">
+                        <img src="https://imgur.com/CshNWnY.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Chrome</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-chrome_webstore" data-g-module_name="Product Tile" data-g-module_id="chrome_webstore">
+                        <a class="product-link product-wrapper chrome_webstore" target="_blank" href="https://chrome.google.com/webstore/category/apps" data-g-cta_type="module" data-g-cta_text="Chrome Enterprise" data-g-cta_url="https://chrome.google.com/webstore/category/apps" tabindex="null" data-g-module_position="7/72">
+                        <img src="https://imgur.com/QtvqLBD.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Chrome Enterprise</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-chromebooks" data-g-module_name="Product Tile" data-g-module_id="chromebooks">
+                        <a class="product-link product-wrapper chromebooks" target="_blank" href="https://www.google.com/chromebook/" data-g-cta_type="module" data-g-cta_text="Chromebook" data-g-cta_url="https://www.google.com/chromebook/" tabindex="null" data-g-module_position="8/72">
+                        <img src="https://imgur.com/0xscomu.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Chromebook</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-chromecast" data-g-module_name="Product Tile" data-g-module_id="chromecast">
+                        <a class="product-link product-wrapper chromecast" target="_blank" href="https://store.google.com/product/chromecast" data-g-cta_type="module" data-g-cta_text="Chromecast" data-g-cta_url="https://store.google.com/product/chromecast" tabindex="null" data-g-module_position="9/72">
+                        <img src="https://imgur.com/feKAFN3.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Chromecast</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-exposure_notifications" data-g-module_name="Product Tile" data-g-module_id="exposure_notifications">
+                        <a class="product-link product-wrapper exposure_notifications" target="_blank" href="https://www.google.com/covid19/exposurenotifications/" data-g-cta_type="module" data-g-cta_text="Exposure Notifications" data-g-cta_url="https://www.google.com/covid19/exposurenotifications/" tabindex="null" data-g-module_position="10/72">
+                        <img src="https://imgur.com/C0AF7B7.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true" style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-33)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important">
+                        <p class="glue-headline glue-headline--headline-5">Exposure Notifications</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-gboard" data-g-module_name="Product Tile" data-g-module_id="gboard">
+                        <a class="product-link product-wrapper gboard" target="_blank" href="https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin" data-g-cta_type="module" data-g-cta_text="Gboard" data-g-cta_url="https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin" tabindex="null" data-g-module_position="11/72">
+                        <img src="https://imgur.com/yWiCEXf.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Gboard</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-gmail" data-g-module_name="Product Tile" data-g-module_id="gmail">
+                        <a class="product-link product-wrapper gmail" target="_blank" href="https://www.gmail.com/intl/en_us/mail/help/about.html" data-g-cta_type="module" data-g-cta_text="Gmail" data-g-cta_url="https://www.gmail.com/intl/en_us/mail/help/about.html" tabindex="null" data-g-module_position="12/72">
+                        <img src="https://imgur.com/tGRKBRq.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Gmail</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-google_arts_and_culture" data-g-module_name="Product Tile" data-g-module_id="google_arts_and_culture">
+                        <a class="product-link product-wrapper google_arts_and_culture" target="_blank" href="https://artsandculture.google.com/?utm_medium=referral&amp;utm_source=about.google" data-g-cta_type="module" data-g-cta_text="Google Arts &amp; Culture" data-g-cta_url="https://artsandculture.google.com/?utm_medium=referral&amp;utm_source=about.google" tabindex="null" data-g-module_position="13/72">
+                        <img src="https://imgur.com/ETVMLxr.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Google Arts &amp; Culture</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-google_cast" data-g-module_name="Product Tile" data-g-module_id="google_cast">
+                        <a class="product-link product-wrapper google_cast" target="_blank" href="https://www.google.com/cast/" data-g-cta_type="module" data-g-cta_text="Google Cast" data-g-cta_url="https://www.google.com/cast/" tabindex="null" data-g-module_position="14/72">
+                        <img src="https://imgur.com/c3LhyZP.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Google Cast</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-google_chat" data-g-module_name="Product Tile" data-g-module_id="google_chat">
+                        <a class="product-link product-wrapper google_chat" target="_blank" href="https://gsuite.google.com/products/chat/" data-g-cta_type="module" data-g-cta_text="Google Chat" data-g-cta_url="https://gsuite.google.com/products/chat/" tabindex="null" data-g-module_position="15/72">
+                        <img src="https://imgur.com/sIoXeIi.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Google Chat</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-google_classroom" data-g-module_name="Product Tile" data-g-module_id="google_classroom">
+                        <a class="product-link product-wrapper google_classroom" target="_blank" href="https://edu.google.com/workspace-for-education/classroom/" data-g-cta_type="module" data-g-cta_text="Google Classroom" data-g-cta_url="https://edu.google.com/workspace-for-education/classroom/" tabindex="null" data-g-module_position="16/72">
+                        <img src="https://imgur.com/TaRe11E.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Google Classroom</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-google_expeditions" data-g-module_name="Product Tile" data-g-module_id="google_expeditions">
+                        <a class="product-link product-wrapper google_expeditions" target="_blank" href="https://www.google.co.in/edu/expeditions/" data-g-cta_type="module" data-g-cta_text="Google Expeditions" data-g-cta_url="https://www.google.co.in/edu/expeditions/" tabindex="null" data-g-module_position="17/72">
+                        <img src="https://imgur.com/TlbInNX.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Google Expeditions</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-google_express" data-g-module_name="Product Tile" data-g-module_id="google_express">
+                        <a class="product-link product-wrapper google_express" target="_blank" href="https://www.google.com/express/" data-g-cta_type="module" data-g-cta_text="Google Express" data-g-cta_url="https://www.google.com/express/" tabindex="null" data-g-module_position="18/72">
+                        <img src="https://imgur.com/v7ovWFf.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Google Express</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-google_fit" data-g-module_name="Product Tile" data-g-module_id="google_fit">
+                        <a class="product-link product-wrapper google_fit" target="_blank" href="https://play.google.com/store/apps/details?id=com.google.android.apps.fitness&amp;hl=en" data-g-cta_type="module" data-g-cta_text="Google Fit" data-g-cta_url="https://play.google.com/store/apps/details?id=com.google.android.apps.fitness&amp;hl=en" tabindex="null" data-g-module_position="19/72">
+                        <img src="https://imgur.com/a0ZPSVb.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Google Fit</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-google_fonts" data-g-module_name="Product Tile" data-g-module_id="google_fonts">
+                        <a class="product-link product-wrapper google_fonts" target="_blank" href="https://www.google.com/fonts" data-g-cta_type="module" data-g-cta_text="Google Fonts" data-g-cta_url="https://www.google.com/fonts" tabindex="null" data-g-module_position="20/72">
+                        <img src="https://imgur.com/AFeSL15.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Google Fonts</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-maps" data-g-module_name="Product Tile" data-g-module_id="maps">
+                        <a class="product-link product-wrapper maps" target="_blank" href="https://www.google.com/maps/about/" data-g-cta_type="module" data-g-cta_text="Google Maps" data-g-cta_url="https://www.google.com/maps/about/" tabindex="null" data-g-module_position="21/72">
+                        <img src="https://imgur.com/Kr3ojeT.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Google Maps</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-google_meet" data-g-module_name="Product Tile" data-g-module_id="google_meet">
+                        <a class="product-link product-wrapper google_meet" target="_blank" href="https://gsuite.google.com/products/meet/" data-g-cta_type="module" data-g-cta_text="Google Meet" data-g-cta_url="https://gsuite.google.com/products/meet/" tabindex="null" data-g-module_position="22/72">
+                        <img src="https://imgur.com/g0ciltk.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Google Meet</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-google_one" data-g-module_name="Product Tile" data-g-module_id="google_one">
+                        <a class="product-link product-wrapper google_one" target="_blank" href="https://one.google.com/" data-g-cta_type="module" data-g-cta_text="Google One" data-g-cta_url="https://one.google.com" tabindex="null" data-g-module_position="23/72">
+                        <img src="https://imgur.com/cBWGI81.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Google One</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-google_pay" data-g-module_name="Product Tile" data-g-module_id="google_pay">
+                        <a class="product-link product-wrapper google_pay" target="_blank" href="https://pay.google.com/about/" data-g-cta_type="module" data-g-cta_text="Google Pay" data-g-cta_url="https://pay.google.com/about/" tabindex="null" data-g-module_position="24/72">
+                        <img src="https://imgur.com/uDM2WAe.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Google Pay</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-google_play" data-g-module_name="Product Tile" data-g-module_id="google_play">
+                        <a class="product-link product-wrapper google_play" target="_blank" href="https://play.google.com/store?hl=en" data-g-cta_type="module" data-g-cta_text="Google Play" data-g-cta_url="https://play.google.com/store?hl=en" tabindex="null" data-g-module_position="25/72">
+                        <img src="https://imgur.com/nc8Kqah.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Google Play</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-google_play_books" data-g-module_name="Product Tile" data-g-module_id="google_play_books">
+                        <a class="product-link product-wrapper google_play_books" target="_blank" href="https://play.google.com/store/apps/details?id=com.google.android.apps.books&amp;e=-EnableAppDetailsPageRedesign" data-g-cta_type="module" data-g-cta_text="Google Play Books" data-g-cta_url="https://play.google.com/store/apps/details?id=com.google.android.apps.books&amp;e=-EnableAppDetailsPageRedesign" tabindex="null" data-g-module_position="26/72">
+                        <img src="https://imgur.com/CYu0bYu.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Google Play Books</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-google_play_movies_and_tv" data-g-module_name="Product Tile" data-g-module_id="google_play_movies_and_tv">
+                        <a class="product-link product-wrapper google_play_movies_and_tv" target="_blank" href="https://support.google.com/googleplay/answer/4512465" data-g-cta_type="module" data-g-cta_text="Google Play 影視" data-g-cta_url="https://support.google.com/googleplay/answer/4512465" tabindex="null" data-g-module_position="27/72">
+                        <img src="https://imgur.com/jD04YvV.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Google Play 影視</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-google_play_games" data-g-module_name="Product Tile" data-g-module_id="google_play_games">
+                        <a class="product-link product-wrapper google_play_games" target="_blank" href="https://play.google.com/store/apps/details?id=com.google.android.play.games&amp;hl=en" data-g-cta_type="module" data-g-cta_text="Google Play 遊戲" data-g-cta_url="https://play.google.com/store/apps/details?id=com.google.android.play.games&amp;hl=en" tabindex="null" data-g-module_position="28/72">
+                        <img src="https://imgur.com/ySNP5zs.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Google Play 遊戲</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-google-shopping" data-g-module_name="Product Tile" data-g-module_id="google-shopping">
+                        <a class="product-link product-wrapper google-shopping" target="_blank" href="https://shopping.google.com/u/0/" data-g-cta_type="module" data-g-cta_text="Google Shopping" data-g-cta_url="https://shopping.google.com/u/0/" tabindex="null" data-g-module_position="29/72">
+                        <img src="https://imgur.com/8VVNwBz.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Google Shopping</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-google-tv" data-g-module_name="Product Tile" data-g-module_id="google-tv">
+                        <a class="product-link product-wrapper google-tv" target="_blank" href="https://tv.google/" data-g-cta_type="module" data-g-cta_text="Google TV" data-g-cta_url="https://tv.google/" tabindex="null" data-g-module_position="30/72">
+                        <img src="https://imgur.com/JelNssv.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Google TV</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-voice" data-g-module_name="Product Tile" data-g-module_id="voice">
+                        <a class="product-link product-wrapper voice" target="_blank" href="https://voice.google.com/" data-g-cta_type="module" data-g-cta_text="Google Voice" data-g-cta_url="https://voice.google.com/" tabindex="null" data-g-module_position="31/72">
+                        <img src="https://imgur.com/3brZ82G.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Google Voice</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-google_wallet" data-g-module_name="Product Tile" data-g-module_id="google_wallet">
+                        <a class="product-link product-wrapper google_wallet" target="_blank" href="https://wallet.google/" data-g-cta_type="module" data-g-cta_text="Google Wallet" data-g-cta_url="https://wallet.google/" tabindex="null" data-g-module_position="32/72">
+                        <img src="https://imgur.com/a5V9g7R.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true" style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-55)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important">
+                        <p class="glue-headline glue-headline--headline-5">Google Wallet</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-google_wifi" data-g-module_name="Product Tile" data-g-module_id="google_wifi">
+                        <a class="product-link product-wrapper google_wifi" target="_blank" href="https://store.google.com/product/google_wifi" data-g-cta_type="module" data-g-cta_text="Google Wifi" data-g-cta_url="https://store.google.com/product/google_wifi" tabindex="null" data-g-module_position="33/72">
+                        <img src="https://imgur.com/VDQmPq7.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Google Wifi</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-assistant_drawer" data-g-module_name="Product Tile" data-g-module_id="assistant_drawer">
+                        <a class="product-link product-wrapper assistant_drawer" target="_blank" href="https://assistant.google.com/" data-g-cta_type="module" data-g-cta_text="Google 助理" data-g-cta_url="https://assistant.google.com/" tabindex="null" data-g-module_position="34/72">
+                        <img src="https://imgur.com/dbXCLb2.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true" style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-57)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important">
+                        <p class="glue-headline glue-headline--headline-5">Google 助理</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-google_store" data-g-module_name="Product Tile" data-g-module_id="google_store">
+                        <a class="product-link product-wrapper google_store" target="_blank" href="https://store.google.com/regionpicker/" data-g-cta_type="module" data-g-cta_text="Google 商店" data-g-cta_url="https://store.google.com/regionpicker/" tabindex="null" data-g-module_position="35/72">
+                        <img src="https://imgur.com/Lb4eceE.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Google 商店</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-google_alerts" data-g-module_name="Product Tile" data-g-module_id="google_alerts">
+                        <a class="product-link product-wrapper google_alerts" target="_blank" href="https://www.google.com/alerts" data-g-cta_type="module" data-g-cta_text="Google 快訊" data-g-cta_url="https://www.google.com/alerts" tabindex="null" data-g-module_position="36/72">
+                        <img src="https://imgur.com/e4CQc8Z.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Google 快訊</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-docs" data-g-module_name="Product Tile" data-g-module_id="docs">
+                        <a class="product-link product-wrapper docs" target="_blank" href="https://www.google.com/docs/about/?utm_source=gaboutpage&amp;utm_medium=docslink&amp;utm_campaign=gabout" data-g-cta_type="module" data-g-cta_text="Google 文件" data-g-cta_url="https://www.google.com/docs/about/?utm_source=gaboutpage&amp;utm_medium=docslink&amp;utm_campaign=gabout" tabindex="null" data-g-module_position="37/72">
+                        <img src="https://imgur.com/HEO7pDt.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Google 文件</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-news" data-g-module_name="Product Tile" data-g-module_id="news">
+                        <a class="product-link product-wrapper news" target="_blank" href="https://news.google.com/" data-g-cta_type="module" data-g-cta_text="Google 新聞" data-g-cta_url="https://news.google.com/" tabindex="null" data-g-module_position="38/72">
+                        <img src="https://imgur.com/POVOZRW.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Google 新聞</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-groups" data-g-module_name="Product Tile" data-g-module_id="groups">
+                        <a class="product-link product-wrapper groups" target="_blank" href="https://groups.google.com/" data-g-cta_type="module" data-g-cta_text="Google 網上論壇" data-g-cta_url="https://groups.google.com" tabindex="null" data-g-module_position="39/72">
+                        <img src="https://imgur.com/lXGUwHT.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Google 網上論壇</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-google_flights" data-g-module_name="Product Tile" data-g-module_id="google_flights">
+                        <a class="product-link product-wrapper google_flights" target="_blank" href="https://www.google.com/flights" data-g-cta_type="module" data-g-cta_text="Google 航班/機票" data-g-cta_url="https://www.google.com/flights" tabindex="null" data-g-module_position="40/72">
+                        <img src="https://imgur.com/kM3XThV.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Google 航班/機票</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-finance" data-g-module_name="Product Tile" data-g-module_id="finance">
+                        <a class="product-link product-wrapper finance" target="_blank" href="https://www.google.com/finance" data-g-cta_type="module" data-g-cta_text="Google 財經" data-g-cta_url="https://www.google.com/finance" tabindex="null" data-g-module_position="41/72">
+                        <img src="https://imgur.com/KUhQRDD.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Google 財經</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-google_input_tools" data-g-module_name="Product Tile" data-g-module_id="google_input_tools">
+                        <a class="product-link product-wrapper google_input_tools" target="_blank" href="https://www.google.com/inputtools/" data-g-cta_type="module" data-g-cta_text="Google 輸入工具" data-g-cta_url="https://www.google.com/inputtools/" tabindex="null" data-g-module_position="42/72">
+                        <img src="https://imgur.com/u3fO7Ir.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Google 輸入工具</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-google_cloud_print" data-g-module_name="Product Tile" data-g-module_id="google_cloud_print">
+                        <a class="product-link product-wrapper google_cloud_print" target="_blank" href="https://www.google.com/cloudprint/learn/index.html" data-g-cta_type="module" data-g-cta_text="Google 雲端列印" data-g-cta_url="https://www.google.com/cloudprint/learn/index.html" tabindex="null" data-g-module_position="43/72">
+                        <img src="https://imgur.com/9U3z4Al.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Google 雲端列印</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-keep" data-g-module_name="Product Tile" data-g-module_id="keep">
+                        <a class="product-link product-wrapper keep" target="_blank" href="https://www.google.com/keep/" data-g-cta_type="module" data-g-cta_text="Keep" data-g-cta_url="https://www.google.com/keep/" tabindex="null" data-g-module_position="44/72">
+                        <img src="https://imgur.com/976vmwI.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Keep</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-google_lens" data-g-module_name="Product Tile" data-g-module_id="google_lens">
+                        <a class="product-link product-wrapper google_lens" target="_blank" href="https://lens.google.com/#" data-g-cta_type="module" data-g-cta_text="Lens" data-g-cta_url="https://lens.google.com/#" tabindex="null" data-g-module_position="45/72">
+                        <img src="https://imgur.com/1hUp508.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Lens</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-google_connected_home" data-g-module_name="Product Tile" data-g-module_id="google_connected_home">
+                        <a class="product-link product-wrapper google_connected_home" target="_blank" href="https://store.google.com/category/connected_home" data-g-cta_type="module" data-g-cta_text="Nest" data-g-cta_url="https://store.google.com/category/connected_home" tabindex="null" data-g-module_position="46/72">
+                        <img src="https://imgur.com/xDuh3ue.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Nest</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-pixel_phone" data-g-module_name="Product Tile" data-g-module_id="pixel_phone">
+                        <a class="product-link product-wrapper pixel_phone" target="_blank" href="https://store.google.com/category/phones" data-g-cta_type="module" data-g-cta_text="Pixel" data-g-cta_url="https://store.google.com/category/phones" tabindex="null" data-g-module_position="47/72">
+                        <img src="https://imgur.com/dbKh05x.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Pixel</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-play-protect" data-g-module_name="Product Tile" data-g-module_id="play-protect">
+                        <a class="product-link product-wrapper play-protect" target="_blank" href="https://www.android.com/intl/zh-TW_tw/play-protect/" data-g-cta_type="module" data-g-cta_text="Play 安全防護" data-g-cta_url="https://www.android.com/intl/zh-TW_tw/play-protect/" tabindex="null" data-g-module_position="48/72">
+                        <img src="https://imgur.com/zZLMKlO.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Play 安全防護</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-google-travel" data-g-module_name="Product Tile" data-g-module_id="google-travel">
+                        <a class="product-link product-wrapper google-travel" target="_blank" href="https://www.google.com/travel/" data-g-cta_type="module" data-g-cta_text="Travel" data-g-cta_url="https://www.google.com/travel/" tabindex="null" data-g-module_position="49/72">
+                        <img src="https://imgur.com/ePBy0iu.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Travel</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-waze" data-g-module_name="Product Tile" data-g-module_id="waze">
+                        <a class="product-link product-wrapper waze" target="_blank" href="https://www.waze.com/" data-g-cta_type="module" data-g-cta_text="Waze" data-g-cta_url="https://www.waze.com/" tabindex="null" data-g-module_position="50/72">
+                        <img src="https://imgur.com/jx9peMF.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Waze</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-android_wear" data-g-module_name="Product Tile" data-g-module_id="android_wear">
+                        <a class="product-link product-wrapper android_wear" target="_blank" href="https://wearos.google.com/" data-g-cta_type="module" data-g-cta_text="Wear OS by Google" data-g-cta_url="https://wearos.google.com/" tabindex="null" data-g-module_position="51/72">
+                        <img src="https://imgur.com/dBfroXa.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">Wear OS by Google</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-youtube" data-g-module_name="Product Tile" data-g-module_id="youtube">
+                        <a class="product-link product-wrapper youtube" target="_blank" href="https://www.youtube.com/yt/about/" data-g-cta_type="module" data-g-cta_text="YouTube" data-g-cta_url="https://www.youtube.com/yt/about/" tabindex="null" data-g-module_position="52/72">
+                        <img src="https://imgur.com/jdZe0Ym.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">YouTube</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-youtube_music" data-g-module_name="Product Tile" data-g-module_id="youtube_music">
+                        <a class="product-link product-wrapper youtube_music" target="_blank" href="https://www.youtube.com/musicpremium" data-g-cta_type="module" data-g-cta_text="YouTube Music" data-g-cta_url="https://www.youtube.com/musicpremium" tabindex="null" data-g-module_position="53/72">
+                        <img src="https://imgur.com/Csqjsiu.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">YouTube Music</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-youtube-tv" data-g-module_name="Product Tile" data-g-module_id="youtube-tv">
+                        <a class="product-link product-wrapper youtube-tv" target="_blank" href="https://tv.youtube.com/?utm_source=gaboutpage&amp;utm_medium=youtubetv&amp;utm_campaign=gabout" data-g-cta_type="module" data-g-cta_text="YouTube TV" data-g-cta_url="https://tv.youtube.com/?utm_source=gaboutpage&amp;utm_medium=youtubetv&amp;utm_campaign=gabout" tabindex="null" data-g-module_position="54/72">
+                        <img src="https://imgur.com/Rb1NgLc.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">YouTube TV</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-youtube_kids" data-g-module_name="Product Tile" data-g-module_id="youtube_kids">
+                        <a class="product-link product-wrapper youtube_kids" target="_blank" href="https://youtube-global.blogspot.com/2015/02/youtube-kids.html" data-g-cta_type="module" data-g-cta_text="YouTube 兒童版" data-g-cta_url="https://youtube-global.blogspot.com/2015/02/youtube-kids.html" tabindex="null" data-g-module_position="55/72">
+                        <img src="https://imgur.com/CSDCNiz.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">YouTube 兒童版</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-cars-with-google" data-g-module_name="Product Tile" data-g-module_id="cars-with-google">
+                        <a class="product-link product-wrapper cars-with-google" target="_blank" href="https://built-in.google/cars/" data-g-cta_type="module" data-g-cta_text="內建 Google 服務的車輛" data-g-cta_url="https://built-in.google/cars/" tabindex="null" data-g-module_position="56/72">
+                        <img src="https://imgur.com/b1iTY5k.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">內建 Google 服務的車輛</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-sites" data-g-module_name="Product Tile" data-g-module_id="sites">
+                        <a class="product-link product-wrapper sites" target="_blank" href="https://sites.google.com/new" data-g-cta_type="module" data-g-cta_text="協作平台" data-g-cta_url="https://sites.google.com/new" tabindex="null" data-g-module_position="57/72">
+                        <img src="https://imgur.com/QTPe6Ye.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">協作平台</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-earth" data-g-module_name="Product Tile" data-g-module_id="earth">
+                        <a class="product-link product-wrapper earth" target="_blank" href="https://www.google.com/earth/" data-g-cta_type="module" data-g-cta_text="地球" data-g-cta_url="https://www.google.com/earth/" tabindex="null" data-g-module_position="58/72">
+                        <img src="https://imgur.com/llvo6c3.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">地球</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-scholar" data-g-module_name="Product Tile" data-g-module_id="scholar">
+                        <a class="product-link product-wrapper scholar" target="_blank" href="https://scholar.google.com/intl/en-US/scholar/about.html" data-g-cta_type="module" data-g-cta_text="學術搜尋" data-g-cta_url="https://scholar.google.com/intl/en-US/scholar/about.html" tabindex="null" data-g-module_position="59/72">
+                        <img src="https://imgur.com/dmEAG5W.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">學術搜尋</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-search" data-g-module_name="Product Tile" data-g-module_id="search">
+                        <a class="product-link product-wrapper search" target="_blank" href="https://www.google.com/search/about/" data-g-cta_type="module" data-g-cta_text="搜尋" data-g-cta_url="https://www.google.com/search/about/" tabindex="null" data-g-module_position="60/72">
+                        <img src="https://imgur.com/M2U1e7i.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">搜尋</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-podcasts" data-g-module_name="Product Tile" data-g-module_id="podcasts">
+                        <a class="product-link product-wrapper podcasts" target="_blank" href="https://podcasts.google.com/" data-g-cta_type="module" data-g-cta_text="播客" data-g-cta_url="https://podcasts.google.com/" tabindex="null" data-g-module_position="61/72">
+                        <img src="https://imgur.com/mjQn3Kf.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true" style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-84)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important">
+                        <p class="glue-headline glue-headline--headline-5">播客</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-calendar" data-g-module_name="Product Tile" data-g-module_id="calendar">
+                        <a class="product-link product-wrapper calendar" target="_blank" href="https://www.google.com/calendar/about/" data-g-cta_type="module" data-g-cta_text="日曆" data-g-cta_url="https://www.google.com/calendar/about/" tabindex="null" data-g-module_position="62/72">
+                        <img src="https://imgur.com/hyrdH7t.jpg" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">   
+                        <p class="glue-headline glue-headline--headline-5">日曆</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-photos" data-g-module_name="Product Tile" data-g-module_id="photos">
+                        <a class="product-link product-wrapper photos" target="_blank" href="https://www.google.com/photos/about" data-g-cta_type="module" data-g-cta_text="相簿" data-g-cta_url="https://www.google.com/photos/about" tabindex="null" data-g-module_position="63/72">
+                        <img src="https://imgur.com/xGm3Hbc.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">相簿</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-slides" data-g-module_name="Product Tile" data-g-module_id="slides">
+                        <a class="product-link product-wrapper slides" target="_blank" href="https://www.google.com/slides/about/?utm_source=gaboutpage&amp;utm_medium=slideslink&amp;utm_campaign=gabout" data-g-cta_type="module" data-g-cta_text="簡報" data-g-cta_url="https://www.google.com/slides/about/?utm_source=gaboutpage&amp;utm_medium=slideslink&amp;utm_campaign=gabout" tabindex="null" data-g-module_position="64/72">
+                        <img src="https://imgur.com/GAV9aQA.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">簡報</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-drawings" data-g-module_name="Product Tile" data-g-module_id="drawings">
+                        <a class="product-link product-wrapper drawings" target="_blank" href="https://chrome.google.com/webstore/detail/google-drawings/mkaakpdehdafacodkgkpghoibnmamcme?hl=en-US" data-g-cta_type="module" data-g-cta_text="繪圖" data-g-cta_url="https://chrome.google.com/webstore/detail/google-drawings/mkaakpdehdafacodkgkpghoibnmamcme?hl=en-US" tabindex="null" data-g-module_position="65/72">
+                        <img src="https://imgur.com/0WPh363.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">繪圖</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-translate" data-g-module_name="Product Tile" data-g-module_id="translate">
+                        <a class="product-link product-wrapper translate" target="_blank" href="https://translate.google.com/about" data-g-cta_type="module" data-g-cta_text="翻譯" data-g-cta_url="https://translate.google.com/about" tabindex="null" data-g-module_position="66/72">
+                        <img src="https://imgur.com/kC2IUSS.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">翻譯</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-contacts" data-g-module_name="Product Tile" data-g-module_id="contacts">
+                        <a class="product-link product-wrapper contacts" target="_blank" href="https://play.google.com/store/apps/details?id=com.google.android.contacts" data-g-cta_type="module" data-g-cta_text="聯絡人" data-g-cta_url="https://play.google.com/store/apps/details?id=com.google.android.contacts" tabindex="null" data-g-module_position="67/72">
+                        <img src="https://imgur.com/uB3ecpa.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">聯絡人</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-forms" data-g-module_name="Product Tile" data-g-module_id="forms">
+                        <a class="product-link product-wrapper forms" target="_blank" href="https://www.google.com/forms/about/?utm_source=gaboutpage&amp;utm_medium=formslink&amp;utm_campaign=gabout" data-g-cta_type="module" data-g-cta_text="表單" data-g-cta_url="https://www.google.com/forms/about/?utm_source=gaboutpage&amp;utm_medium=formslink&amp;utm_campaign=gabout" tabindex="null" data-g-module_position="68/72">
+                        <img src="https://imgur.com/cIavZP9.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">表單</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-messenger" data-g-module_name="Product Tile" data-g-module_id="messenger">
+                        <a class="product-link product-wrapper messenger" target="_blank" href="https://messages.google.com/" data-g-cta_type="module" data-g-cta_text="訊息" data-g-cta_url="https://messages.google.com/" tabindex="null" data-g-module_position="69/72">
+                        <img src="https://imgur.com/H685Or4.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">訊息</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-sheets" data-g-module_name="Product Tile" data-g-module_id="sheets">
+                        <a class="product-link product-wrapper sheets" target="_blank" href="https://www.google.com/sheets/about/?utm_source=gaboutpage&amp;utm_medium=sheetslink&amp;utm_campaign=gabout" data-g-cta_type="module" data-g-cta_text="試算表" data-g-cta_url="https://www.google.com/sheets/about/?utm_source=gaboutpage&amp;utm_medium=sheetslink&amp;utm_campaign=gabout" tabindex="null" data-g-module_position="70/72">
+                        <img src="https://imgur.com/4zbFZgK.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">試算表</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-drive" data-g-module_name="Product Tile" data-g-module_id="drive">
+                        <a class="product-link product-wrapper drive" target="_blank" href="https://www.google.com/drive/" data-g-cta_type="module" data-g-cta_text="雲端硬碟" data-g-cta_url="https://www.google.com/drive/" tabindex="null" data-g-module_position="71/72">
+                        <img src="https://imgur.com/EToyn5w.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">雲端硬碟</p></a>
+                    </div>
+                    <div class="glue-grid__col glue-grid__col--span-4-sm glue-grid__col--span-6-md glue-grid__col--span-3-lg product product-tilt_brush" data-g-module_name="Product Tile" data-g-module_id="tilt_brush">
+                        <a class="product-link product-wrapper tilt_brush" target="_blank" href="https://www.tiltbrush.com/" data-g-cta_type="module" data-g-cta_text="魔幻畫筆" data-g-cta_url="https://www.tiltbrush.com/" tabindex="null" data-g-module_position="72/72">
+                        <img src="https://imgur.com/8lWg4hc.png" class="product-logo icon-product lazy-img js-only" alt="" aria-hidden="true">
+                        <p class="glue-headline glue-headline--headline-5">魔幻畫筆</p></a>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div id="apple" style="display:none;">
+            這是Apple的分頁
+            <h1 style="text-align: center;">Apple 產品</h1>
+            <!-- 橫向選單 -->
+            <div id="menu">
+                <ul>
+                    <li class="menu-item"><a href="#iPhone_15" class="menu-link">iPhone_15</a></li>
+                    <li class="menu-item"><a href="#iPhone_14" class="menu-link">iPhone_14</a></li>
+                    <li class="menu-item"><a href="#iPhone_13" class="menu-link">iPhone_13</a></li>
+                    <li class="menu-item"><a href="#iPhone_12" class="menu-link">iPhone_12</a></li>
+                    <li class="menu-item"><a href="#iPhone_11" class="menu-link">iPhone_11</a></li>
+                    <li class="menu-item"><a href="#iPhone_SE" class="menu-link">iPhone_SE</a></li>
+                </ul>
+            </div>
+            <!-- 內容區域 -->
+            <div class="content" id="iPhone_15">
+                <img src="https://imgur.com/xRpod9N.jpg" alt="" class="data_area">
+            </div>
+            <div class="content" id="iPhone_14">
+                <img src="https://imgur.com/YDTdrVs.jpg" alt="" class="data_area">
+            </div>
+            <div class="content" id="iPhone_13">
+                <img src="https://imgur.com/YkajPPi.jpg" alt="" class="data_area">
+            </div>
+            <div class="content" id="iPhone_12">
+                <img src="https://imgur.com/PTvN4qC.jpg" alt="" class="data_area">
+            </div>
+            <div class="content" id="iPhone_11">
+                <img src="https://imgur.com/Vea2ylj.jpg" alt="" class="data_area">
+            </div>
+            <div class="content" id="iPhone_SE">
+                <img src="https://imgur.com/QyPYSLG.jpg" alt="" class="data_area">
+            </div>
+        </div>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">查看電腦資訊</button>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">您的活動資訊已被紀錄</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" style="max-height: 500px; overflow-y: auto;">
+                        <h2>您的活動已被紀錄</h2>
+                        <p id="detectip"></p>
+                        <p id="DetectIPv4"></p>
+                        <p id="userAgent"></p>
+                        <p id="isMobile"></p>
+                        <p id="screenresolution"></p>
+                        <p id="windowsize"></p>
+                        <p id="Displayaspectratio"></p>
+                        <p id="connectiontype"></p>
+                        <p id="effectiveType"></p>
+                        <p id="downlink"></p>
+                        <p id="uplink"></p>
+                        <p id="batterylevel"></p>
+                        <p id="charging"></p>
+                        <p id="chargingTime"></p>
+                        <p id="dischargingTime"></p>
+                        <p id="Doesnotsupportbatterypowerdetection"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <!--<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">確定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 頁尾 -->
+        <footer class="container-fluid">
+            <hr>	
+            <p class="float-end"><a href="#">Back to top</a></p>
+            <p>&copy; 電腦資訊 &middot; <a href="#">隱私權</a> &middot; <a href="#">聯絡我們</a></p>	
+        </footer>
+        <!--設備資料偵測-->	
+        <script>
+            // 獲取IP地址的同步函數
+            async function getIP() {
+                try {
+                    const response = await fetch('https://api.ipify.org/?format=json');
+                    const data = await response.json();
+                    const ip = data.ip;
+                    document.getElementById('detectip').innerText += 'IP地址：' + ip + '\n';
+                } catch (error) {
+                    document.getElementById('detectip').innerText += '獲取IP地址失敗：' + error + '\n';
+                }
+            }
+        
+            // 調用函數獲取IP地址
+            getIP();
+        
+            // 獲取IPv4地址的同步函數
+            async function getIPv4() {
+                try {
+                    const { address } = await fetch('https://api64.ipify.org?format=json').then(response => response.json());
+                    const ipv4 = address;
+                    document.getElementById('DetectIPv4').innerText += 'IPv4地址:' + ipv4 + '\n';
+                } catch (error) {
+                    document.getElementById('DetectIPv4').innerText += '獲取IPv4地址失敗:' + error + '\n';
+                }
+            }
+        
+            // 調用函數獲取IPv4地址
+            getIPv4();
+        
+            // 設備偵測
+            var userAgent = navigator.userAgent;
+            document.getElementById('userAgent').innerText += '用戶代理：' + userAgent + '\n';
+        
+            var isMobile = /Mobile/i.test(userAgent);
+            document.getElementById('isMobile').innerText += '是否移動設備：' + isMobile + '\n';
+        
+            var screenWidth = window.screen.width;
+            var screenHeight = window.screen.height;
+            document.getElementById('screenresolution').innerText += '屏幕分辨率:' + screenWidth + 'x' + screenHeight + '\n';
+        
+            var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+            var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+            document.getElementById('windowsize').innerText += '窗口大小：' + windowWidth + 'x' + windowHeight + '\n';
+        
+            var screenWidth = window.screen.width;
+            var screenHeight = window.screen.height;
+            var aspectRatio = screenWidth / screenHeight;
+            document.getElementById('Displayaspectratio').innerText += '顯示器寬高比：' + aspectRatio + '\n';
+        
+            // 檢測網絡速度
+            function detectNetworkSpeed() {
+                if (navigator.connection) {
+                    var connection = navigator.connection;
+        
+                    // 獲取當前的網絡類型
+                    var type = connection.type;
+                    document.getElementById('connectiontype').innerText += '網絡類型：' + type + '\n';
+        
+                    // 獲取有效帶寬估計值（以Mbps為單位）
+                    var effectiveType = connection.effectiveType;
+                    document.getElementById('effectiveType').innerText += '有效帶寬類型：' + effectiveType + '\n';
+        
+                    // 獲取估計的下行速度（以Mbps為單位）
+                    var downlink = connection.downlink;
+                    document.getElementById('downlink').innerText += '下行速度：' + downlink + 'Mbps' + '\n';
+        
+                    // 獲取估計的上行速度（以Mbps为单位）
+                    var uplink = connection.uplink;
+                    document.getElementById('uplink').innerText += '上行速度：' + uplink + 'Mbps' + '\n';
+                } else {
+                    document.getElementById('uplink').innerText += '不支持網絡速度檢測' + '\n';
+                }
+            }
+        
+            // 調用函數進行網絡速度檢測
+            detectNetworkSpeed();
+        
+            // 檢測電池電量
+            function detectBatteryLevel() {
+                if ('getBattery' in navigator) {
+                    navigator.getBattery().then(function (battery) {
+                        // 獲取電池電量百分比
+                        var level = battery.level * 100;
+                        document.getElementById('batterylevel').innerText += '電池電量：' + level + '%' + '\n';
+        
+                        // 獲取電池充電狀態
+                        var charging = battery.charging;
+                        document.getElementById('charging').innerText += '充電狀態：' + (charging ? '正在充電' : '未充電') + '\n';
+        
+                        // 獲取電池充電時間估計
+                        var chargingTime = battery.chargingTime;
+                        document.getElementById('chargingTime').innerText += '充電時間估計：' + (chargingTime === Infinity ? '未知' : chargingTime + '秒') + '\n';
+        
+                        // 獲取電池剩餘使用時間估計
+                        var dischargingTime = battery.dischargingTime;
+                        document.getElementById('dischargingTime').innerText += '剩餘使用時間估計：' + (dischargingTime === Infinity ? '未知' : dischargingTime + '秒') + '\n';
+                    });
+                } else {
+                    document.getElementById('Doesnotsupportbatterypowerdetection').innerText += '不支持電池電量檢測' + '\n';
+                }
+            }
+        
+            // 調用函數進行電池電量檢測
+            detectBatteryLevel();
+        </script>
+        <!--載入網頁時跳出互動視窗-->
+        <!-- 在這裡加入 JavaScript 程式碼，觸發模態對話框的顯示 -->
+        <script>
+            // 使用 JavaScript 觸發模態對話框的顯示
+            var myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {
+            keyboard: false
+            });
+            
+            // 在網頁載入後觸發模態對話框的顯示
+            window.onload = function() {
+            myModal.show();
+            };
+        </script>
+        <!-- 橫向選單 -->
+        <!--<script>
+            document.addEventListener("DOMContentLoaded", function () {
+                var menuLinks = document.querySelectorAll(".menu-link");
+                for (var i = 0; i < menuLinks.length; i++) {
+                    menuLinks[i].addEventListener("click", function (event) {
+                        event.preventDefault();
+                        var target = this.getAttribute("href");
+                        showContent(target);
+                        setActiveMenuItem(this);
+                    });
+                }
+
+                function showContent(target) {
+                    var contents = document.querySelectorAll(".content");
+                    for (var i = 0; i < contents.length; i++) {
+                        contents[i].style.display = "none";
+                    }
+                    var selectedContent = document.querySelector(target);
+                    if (selectedContent) {
+                        selectedContent.style.display = "block";
+                    }
+                }
+
+                function setActiveMenuItem(selectedItem) {
+                    var menuLinks = document.querySelectorAll(".menu-link");
+                    for (var i = 0; i < menuLinks.length; i++) {
+                        menuLinks[i].classList.remove("active");
+                    }
+                    selectedItem.classList.add("active");
+                }
+
+                //showContent("#iPhone_15");
+                //setActiveMenuItem(document.querySelector(".menu-link[href='#iPhone_15']"));
+            });
+        </script>-->
+
+        <!--切換分頁-->
+        <script>
+
+            // 獲取所有的nav-item元素
+            var navItems = document.querySelectorAll('.nav-item');
+
+            // 將鼠標指標設定為手指（pointer）當滑鼠碰到nav-item時
+            navItems.forEach(function (item) {
+                item.addEventListener('mouseover', function () {
+                    item.style.cursor = 'pointer';
+                });
+            });
+
+            var currentPage = null;
+            
+            showPage('home');
+
+            function showPage(pageId) {
+                // 如果當前頁面存在，則隱藏它
+                if (currentPage) {
+                    currentPage.style.display = 'none';
+                }
+
+                // 顯示新的分頁
+                var page = document.getElementById(pageId);
+                if (page) {
+                    page.style.display = 'block';
+                    currentPage = page; // 更新當前頁面
+                }
+            }
+        </script>
+        <script>
+            function showDropdownMenu(element) {
+                // 顯示dropdown-menu
+                var dropdownMenu = element.querySelector('.dropdown-menu');
+                dropdownMenu.style.display = 'block';
+            }
+
+            function showSubmenu(submenuId) {
+                // 隱藏所有的submenu
+                var submenus = document.querySelectorAll('.submenu');
+                submenus.forEach(function (submenu) {
+                    submenu.style.display = 'none';
+                });
+
+                // 顯示特定的submenu
+                var submenu = document.getElementById(submenuId);
+                if (submenu) {
+                    submenu.style.display = 'block';
+                }
+            }
+        </script>
+    <script>
+        // 顯示loading圖示
+        var loading = document.getElementById('loading');
+        loading.style.display = 'block';
+        // 隱藏捲動軸
+        document.body.style.overflow = 'hidden';
+
+        // 等待整個文檔加載完成後
+        window.onload = function() {
+            // 在網頁完全載入後繼續顯示loading圖示
+            setTimeout(function() {
+                // 隱藏loading圖示
+                loading.style.display = 'none';
+                // 1秒後顯示捲動軸
+                document.body.style.overflow = 'auto';
+            }, 1000); // 1秒後隱藏loading圖示
+        };
+        </script>
+    </body>
+</html>
