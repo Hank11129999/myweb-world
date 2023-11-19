@@ -1,0 +1,195 @@
+<html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8">
+        <!-- 設置viewport，使網頁在不同設備上正確顯示 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- 引入Bootstrap CSS樣式 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/css/bootstrap.min.css">
+        <title>登入系統</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                text-align: center;
+                margin: 0;
+                padding: 20;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>您沒有權限使用此裝置</h1>
+        <h3>設備資料偵測</h3>
+        <!-- 以下是設備資料的顯示區域 -->
+        <p id="detectip"></p>
+        <p id="DetectIPv4"></p>
+        <p id="userAgent"></p>
+        <p id="isMobile"></p>
+        <p id="screenresolution"></p>
+        <p id="windowsize"></p>
+        <p id="Displayaspectratio"></p>
+        <p id="connectiontype"></p>   
+        <p id="effectiveType"></p>
+        <p id="downlink"></p>
+        <p id="uplink"></p>
+        <p id="batterylevel"></p>
+        <p id="charging"></p>
+        <p id="chargingTime"></p>
+        <p id="dischargingTime"></p>
+        <p id="Doesnotsupportbatterypowerdetection"></p>
+
+        <!-- 新增全螢幕按鈕和退出全螢幕按鈕 -->
+        <button id="fullscreenButton" class="btn btn-primary"></button>
+        <button id="exitFullscreenButton" class="btn btn-secondary"></button>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // ... （保留原有的代碼）
+
+                // 新增全螢幕按鈕和退出全螢幕按鈕的事件處理
+                var fullscreenButton = document.getElementById("fullscreenButton");
+                var exitFullscreenButton = document.getElementById("exitFullscreenButton");
+
+                fullscreenButton.addEventListener("click", function () {
+                    enterFullScreen();
+                });
+
+                exitFullscreenButton.addEventListener("click", function () {
+                    exitFullScreen();
+                });
+
+                // 進入全螢幕
+                function enterFullScreen() {
+                    if (document.documentElement.requestFullscreen) {
+                        document.documentElement.requestFullscreen();
+                    } else if (document.documentElement.mozRequestFullScreen) {
+                        document.documentElement.mozRequestFullScreen();
+                    } else if (document.documentElement.webkitRequestFullscreen) {
+                        document.documentElement.webkitRequestFullscreen();
+                    } else if (document.documentElement.msRequestFullscreen) {
+                        document.documentElement.msRequestFullscreen();
+                    }
+                }
+
+                // 退出全螢幕
+                function exitFullScreen() {
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    } else if (document.mozCancelFullScreen) {
+                        document.mozCancelFullScreen();
+                    } else if (document.webkitExitFullscreen) {
+                        document.webkitExitFullscreen();
+                    } else if (document.msExitFullscreen) {
+                        document.msExitFullscreen();
+                    }
+                }
+            });
+        </script>
+        <!-- 獲取IP地址的同步函數 -->
+        <script>
+            async function getIP() {
+                try {
+                    const response = await fetch('https://api.ipify.org/?format=json');
+                    const data = await response.json();
+                    const ip = data.ip;
+                    document.getElementById('detectip').innerText += 'IP地址：' + ip + '\n';
+                } catch (error) {
+                    document.getElementById('detectip').innerText += '獲取IP地址失敗：' + error + '\n';
+                }
+            }
+
+            // 調用函數獲取IP地址
+            getIP();
+
+            // 獲取IPv4地址的同步函數
+            async function getIPv4() {
+                try {
+                    const { address } = await fetch('https://api64.ipify.org?format=json').then(response => response.json());
+                    const ipv4 = address;
+                    document.getElementById('DetectIPv4').innerText += 'IPv4地址:' + ipv4 + '\n';
+                } catch (error) {
+                    document.getElementById('DetectIPv4').innerText += '獲取IPv4地址失敗:' + error + '\n';
+                }
+            }
+
+            // 調用函數獲取IPv4地址
+            getIPv4();
+
+            // 設備偵測
+            var userAgent = navigator.userAgent;
+            document.getElementById('userAgent').innerText += '用户代理：' + userAgent + '\n';
+
+            var isMobile = /Mobile/i.test(userAgent);
+            document.getElementById('isMobile').innerText += '是否移動設備：' + isMobile + '\n';
+
+            var screenWidth = window.screen.width;
+            var screenHeight = window.screen.height;
+            document.getElementById('screenresolution').innerText += '屏幕分辨率:' + screenWidth + 'x' + screenHeight + '\n';
+
+            var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+            var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+            document.getElementById('windowsize').innerText += '窗口大小：' + windowWidth + 'x' + windowHeight + '\n';
+
+            var screenWidth = window.screen.width;
+            var screenHeight = window.screen.height;
+            var aspectRatio = screenWidth / screenHeight;
+            document.getElementById('Displayaspectratio').innerText += '顯示器寬高比：' + aspectRatio + '\n';
+
+            // 檢測網絡速度
+            function detectNetworkSpeed() {
+                if (navigator.connection) {
+                    var connection = navigator.connection;
+
+                    // 獲取當前的網絡類型
+                    var type = connection.type;
+                    document.getElementById('connectiontype').innerText += '網絡類型：' + type + '\n';
+
+                    // 獲取有效帶寬估計值（以Mbps為單位）
+                    var effectiveType = connection.effectiveType;
+                    document.getElementById('effectiveType').innerText += '有效帶寬類型：' + effectiveType + '\n';
+
+                    // 獲取估計的下行速度（以Mbps為單位）
+                    var downlink = connection.downlink;
+                    document.getElementById('downlink').innerText += '下行速度：' + downlink + 'Mbps' + '\n';
+
+                    // 獲取估計的上行速度（以Mbps为单位）
+                    var uplink = connection.uplink;
+                    document.getElementById('uplink').innerText += '上行速度：' + uplink + 'Mbps' + '\n';
+                } else {
+                    document.getElementById('uplink').innerText += '不支持網絡速度檢測' + '\n';
+                }
+            }
+
+            // 調用函數進行網絡速度檢測
+            detectNetworkSpeed();
+
+            // 檢測電池電量
+            function detectBatteryLevel() {
+                if ('getBattery' in navigator) {
+                    navigator.getBattery().then(function (battery) {
+                        // 獲取電池電量百分比
+                        var level = battery.level * 100;
+                        document.getElementById('batterylevel').innerText += '電池電量：' + level + '%' + '\n';
+
+                        // 獲取電池充電狀態
+                        var charging = battery.charging;
+                        document.getElementById('charging').innerText += '充電狀態：' + (charging ? '正在充電' : '未充電') + '\n';
+
+                        // 獲取電池充電時間估計
+                        var chargingTime = battery.chargingTime;
+                        document.getElementById('chargingTime').innerText += '充電時間估計：' + (chargingTime === Infinity ? '未知' : chargingTime + '秒') + '\n';
+
+                        // 獲取電池剩餘使用時間估計
+                        var dischargingTime = battery.dischargingTime;
+                        document.getElementById('dischargingTime').innerText += '剩餘使用時間估計：' + (dischargingTime === Infinity ? '未知' : dischargingTime + '秒') + '\n';
+                    });
+                } else {
+                    document.getElementById('Doesnotsupportbatterypowerdetection').innerText += '不支持電池電量檢測' + '\n';
+                }
+            }
+
+            // 調用函數進行電池電量檢測
+            detectBatteryLevel();
+        </script>
+        <!-- 引入Bootstrap JS檔案 -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
