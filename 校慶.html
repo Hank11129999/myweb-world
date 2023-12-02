@@ -63,6 +63,32 @@
     <div class="border-div-bottom"></div>
     <div class="border-div-left"></div>
     <div class="border-div-right"></div>
-    <iframe src="https://www.youtube.com/embed/skMaSpAPHVI?si=dpqUgMCWOQrzCWSf" title="YouTube video player" allowfullscreen="false"></iframe>
+    <iframe id="myIframe" src="https://www.youtube.com/embed/skMaSpAPHVI?si=dpqUgMCWOQrzCWSf" title="YouTube video player" allowfullscreen="false"></iframe>
+
+    <script>
+        const myIframe = document.getElementById('myIframe');
+        let clickCount = 0;
+        let clickTimeout;
+
+        myIframe.addEventListener('click', function() {
+            clickCount++;
+
+            if (clickCount === 1) {
+                clickTimeout = setTimeout(function() {
+                    clickCount = 0;
+                }, 500); // 設定一個時間窗口 0.5 秒
+            } else if (clickCount > 1) {
+                clearTimeout(clickTimeout);
+                clickCount = 0;
+                
+                // 在這裡添加退出全螢幕的代碼
+                if (document.fullscreenElement) {
+                    document.exitFullscreen();
+                } else if (document.webkitFullscreenElement) {
+                    document.webkitExitFullscreen();
+                }
+            }
+        });
+    </script>
 </body>
 </html>
