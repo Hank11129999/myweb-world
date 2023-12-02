@@ -4,8 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .border-div-top,
+        .border-div-bottom,
+        .border-div-left,
+        .border-div-right {
+            content: '';
+            position: absolute;
+            box-sizing: border-box;
+        }
+
+        .border-div-top,
+        .border-div-bottom {
+            width: calc(100%);
+            height: 60px;
+            background-color: black;
+        }
+
+        .border-div-top {
+            top: 0;
+        }
+
+        .border-div-bottom {
+            bottom: 0;
+        }
+
+        .border-div-left,
+        .border-div-right {
+            width: 30px;
+            height: calc(100%);
+            background-color: black;
+        }
+
+        .border-div-left {
+            left: 0;
+        }
+
+        .border-div-right {
+            right: 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
 </head>
 <body>
-    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/skMaSpAPHVI?si=dpqUgMCWOQrzCWSf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div class="border-div-top"></div>
+        <div class="border-div-bottom"></div>
+        <div class="border-div-left"></div>
+        <div class="border-div-right"></div>
+        <iframe src="https://www.youtube.com/embed/skMaSpAPHVI?si=dpqUgMCWOQrzCWSf" title="YouTube video player" allowfullscreen></iframe>
 </body>
 </html>
