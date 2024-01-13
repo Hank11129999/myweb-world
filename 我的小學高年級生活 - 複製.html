@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">    
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <meta charset="utf-8">
+        <title>我的小學高年級生活 112年</title>
+        <script language="JavaScript">
+            function startTime(){
+                var today=new Date();//定義日期物件   
+                var yyyy = today.getFullYear();//通過日期物件的getFullYear()方法返回年    
+                var MM = today.getMonth()+1;//通過日期物件的getMonth()方法返回年    
+                var dd = today.getDate();//通過日期物件的getDate()方法返回年     
+                var hh=today.getHours();//通過日期物件的getHours方法返回小時   
+                var mm=today.getMinutes();//通過日期物件的getMinutes方法返回分鐘   
+                var ss=today.getSeconds();//通過日期物件的getSeconds方法返回秒   
+                // 如果分鐘或小時的值小於10，則在其值前加0，比如如果時間是下午3點20分9秒的話，則顯示15：20：09   
+                MM=checkTime(MM);
+                dd=checkTime(dd);
+                mm=checkTime(mm);   
+                ss=checkTime(ss);    
+                var day; //用於儲存星期（getDay()方法得到星期編號）
+                if(today.getDay()==0)   day   =   "星期日 " 
+                if(today.getDay()==1)   day   =   "星期一 " 
+                if(today.getDay()==2)   day   =   "星期二 " 
+                if(today.getDay()==3)   day   =   "星期三 " 
+                if(today.getDay()==4)   day   =   "星期四 " 
+                if(today.getDay()==5)   day   =   "星期五 " 
+                if(today.getDay()==6)   day   =   "星期六 " 
+                document.getElementById('nowDateTimeSpan').innerHTML=yyyy+"-"+MM +"-"+ dd +" " + hh+":"+mm+":"+ss+"   " + day;   
+                setTimeout('startTime()',1000);//每一秒中重新載入startTime()方法 
+            }   
+
+            function checkTime(i){ 
+                if (i<10){
+                    i="0" + i;
+                }   
+                  return i;
+            }  
+        </script>
+        <script>
+            var number = prompt("請輸入密碼")
+            while (number != 123456) {
+                if (number > 123456) {
+                    alert("密碼錯誤")
+                    number = prompt("請輸入密碼")
+                }
+                else if (number < 123456) {
+                    alert("密碼錯誤")
+                    number = prompt("請輸入密碼")
+                }
+            }
+            alert("密碼正確")
+        </script>
+        <style>
+            table{border: 3px solid	#BEBEBE}
+            th, td{border: 2px solid #E0E0E0}
+        </style>
+
+    </head>
+    <body>
+        <!-- 導覽列 -->
+        <nav class="navbar navbar-light bg-light navbar-expand-md fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">我的網站</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar1">
+                    <span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbar1">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item active"><a class="nav-link" href="#">首頁</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#boy">男生</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#girl">女生</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#selfintroduction">個人介紹</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#groupactivity">團體活動</a></li> 
+                        <li class="nav-item"><a class="nav-link" href="#trackandfield">田徑</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#graduation">畢業典禮</a></li>                        
+                    </ul>
+                </div>		  
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="輸入資料">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+        <br>
+        <br>
+        <br>
+        <center>
+            <h3>隨著時光流逝，我們也將踏上人生新的一段路程，祝大家畢業快樂！</h3>
+            <br>
+            <br>
+            <h4 id="boy">男生</h4>
+            <table cellpadding="8" border="1">
+                <tbody cellpadding="8" border="1">
+                    <tr>
+                        <th>座號</th><th>學號</th><th>學生姓名</th><th>生日</th>
+                    </tr>
+                    <tr>
+                        <td>1</td><td>106056</td><td>陳政嘉</td><td>990926</td>
+                    </tr>
+                    <tr>
+                        <td>2</td><td>106057</td><td>陳禹安</td><td>991002</td>
+                    </tr>
+                    <tr>
+                        <td>3</td><td>106295</td><td>邱敬威</td><td>991018</td>
+                    </tr>
+                    <tr>
+                        <td>4</td><td>106296</td><td>蕭柏鈞</td><td>991027</td>
+                    </tr>
+                    <tr>
+                        <td>5</td><td>106213</td><td>石宗翰</td><td>991112</td>
+                    </tr>
+                    <tr>
+                        <td>6</td><td>106110</td><td>張俊紘</td><td>991116</td>
+                    </tr>
+                    <tr>
+                        <td>7</td><td>106111</td><td>林奕辰</td><td>991124</td>
+                    </tr>
+                    <tr>
+                        <td>8</td><td>106338</td><td>林凱恆</td><td>991129</td>
+                    </tr>
+                    <tr>
+                        <td>9</td><td>106113</td><td>許均睿</td><td>1000105</td>
+                    </tr>
+                    <tr>
+                        <td>10</td><td>106164</td><td>楊岷勳</td><td>1000110</td>
+                    </tr>
+                    <tr>
+                        <td>11</td><td>106271</td><td>吳杰恩</td><td>1000130</td>
+                    </tr>
+                    <tr>
+                        <td>12</td><td>106063</td><td>王加樂</td><td>1000309</td>
+                    </tr>
+                    <tr>
+                        <td>13</td><td>106218</td><td>楊晨昊</td><td>1000322</td>
+                    </tr>
+                    <tr>
+                        <td>14</td><td>106193</td><td>陳冠熙</td><td>1000509</td>
+                    </tr>
+                    <tr>
+                        <td>15</td><td>106278</td><td>陳宥霖</td><td>1000630</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <h4 id="girl">女生</h4>
+            <table cellpadding="8" border="1">
+                <tbody cellpadding="8" border="1">
+                    <tr>
+                        <th>座號</th><th>學號</th><th>學生姓名</th><th>生日</th>
+                    </tr>
+                    <tr>
+                        <td>16</td><td>106203</td><td>孫子甯</td><td>1000203</td>
+                    </tr>
+                    <tr>
+                        <td>17</td><td>106102</td><td>王千海</td><td>1000309</td>
+                    </tr>
+                    <tr>
+                        <td>18</td><td>106022</td><td>康稚妮</td><td>1000317</td>
+                    </tr>
+                    <tr>
+                        <td>19</td><td>106287</td><td>張語芯</td><td>1000418</td>
+                    </tr>
+                    <tr>
+                        <td>20</td><td>106288</td><td>陳美月</td><td>1000605</td>
+                    </tr>
+                    <tr>
+                        <td>21</td><td>106289</td><td>郭妘涵</td><td>1000606</td>
+                    </tr>
+                    <tr>
+                        <td>22</td><td>106106</td><td>龍品璇</td><td>1000619</td>
+                    </tr>
+                    <tr>
+                        <td>23</td><td>106130</td><td>顏羽宣</td><td>1000619</td>
+                    </tr>
+                    <tr>
+                        <td>24</td><td>106053</td><td>林昀臻</td><td>1000702</td>
+                    </tr>
+                    <tr>
+                        <td>25</td><td>106318</td><td>徐宣邑</td><td>1000718</td>
+                    </tr>
+                    <tr>
+                        <td>26</td><td>106319</td><td>史婷如</td><td>1000729</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <br>
+            <h3 id="selfintroduction">個人介紹</h3>
+            <br>
+            <h4>陳政嘉</h4>
+            <img src="">
+            <br>
+            <h4>陳禹安</h4>
+            <img src="">
+            <br>
+            <h4>邱敬威</h4>
+            <img src="">
+            <br>
+            <h4>蕭柏鈞</h4>
+            <img src="">
+            <br>
+            <h4>石宗翰</h4>
+            <img src="">
+            <br>
+            <h4>張俊紘</h4>
+            <img src="">
+            <br>
+            <h4>林奕辰</h4>
+            <img src="">
+            <br>
+            <h4>林凱恆</h4>
+            <img src="">
+            <br>
+            <h4>許均睿</h4>
+            <img src="">
+            <br>
+            <h4>楊岷勳</h4>
+            <img src="">
+            <br>
+            <h4>吳杰恩</h4>
+            <img src="">
+            <br>
+            <h4>王加樂</h4>
+            <img src="">
+            <br>
+            <h4>楊晨昊</h4>
+            <img src="">
+            <br>
+            <h4>陳冠熙</h4>
+            <img src="">
+            <br>
+            <h4>陳宥霖</h4>
+            <img src="">
+            <br>
+            <h4>孫子甯</h4>
+            <img src="">
+            <br>
+            <h4>王千海</h4>
+            <img src="">
+            <br>
+            <h4>康稚妮</h4>
+            <img src="">
+            <br>
+            <h4>張語芯</h4>
+            <img src="">
+            <br>
+            <h4>陳美月</h4>
+            <img src="">
+            <br>
+            <h4>郭妘涵</h4>
+            <img src="">
+            <br>
+            <h4>龍品璇</h4>
+            <img src="">
+            <br>
+            <h4>顏羽宣</h4>
+            <img src="">
+            <br>
+            <h4>林昀臻</h4>
+            <img src="">
+            <br>
+            <h4>徐宣邑</h4>
+            <img src="">
+            <br>
+            <h4>史婷如</h4>
+            <img src="">
+            <br>
+            <br>
+            <h3 id="groupactivity">團體活動</h3>
+            <h5>教育部111學年度第十四屆中小學生普及化運動/大隊接力新竹市複賽</h5><a style="font-size: 4.2mm; text-decoration: none;" href="https://schnews.hc.edu.tw/schoolnews_detail.aspx?ID=183800" target="_blank">2022年12月19日發佈</a>
+            <table cellspacing="1" cellpadding="1" width="600" border="0">
+                <tbody>
+                    <tr>
+                        <td valign="top">
+                            <a href="https://i.imgur.com/78x9zDU.jpg" target="_blank"><img src="https://i.imgur.com/78x9zDU.jpg" align="left" style="width:400px;"></a>
+                        </td>
+                        <td valign="bottom">
+                            <a href="https://i.imgur.com/WVov2Zr.jpg" target="_blank"><img src="https://i.imgur.com/WVov2Zr.jpg" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top" rowspan="2">
+                            <p><span>１１１年１２月１６日本校六年七班小朋友由級任導師黃子芬老師及體育老師楊慧敏帶隊參加教育部１１１學年度第十四屆中小學生普及化運動大隊接力新竹市複賽，感謝淑雯校長、家長會龍會長與學務宛蓒主任特別抽空到場加油！及感謝到場為小朋友加油打氣的家長們，謝謝大家！民富最棒！民富加油！</span></p>
+                        </td>
+                        <td>
+                            <a href="https://i.imgur.com/hUjVqoy.jpg" target="_blank"><img src="https://i.imgur.com/hUjVqoy.jpg" align="right" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://i.imgur.com/gk7aC1X.jpg" target="_blank"><img src="https://i.imgur.com/gk7aC1X.jpg" align="right" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>教育部111學年度第十四屆中小學生普及化運動/大隊接力新竹市複賽2</h5><a style="font-size: 4.2mm; text-decoration: none;" href="https://schnews.hc.edu.tw/schoolnews_detail.aspx?ID=183801" target="_blank">2022年12月19日發佈</a>
+            <table cellspacing="1" cellpadding="1" width="600" border="0">
+                <tbody>
+                    <tr>
+                        <td valign="top">
+                            <a href="https://i.imgur.com/KF7E2Ds.jpg" target="_blank"><img src="https://i.imgur.com/KF7E2Ds.jpg" align="left" style="width:400px;"></a>
+                        </td>
+                        <td valign="bottom">
+                            <a href="https://i.imgur.com/XrWzjMI.jpg" target="_blank"><img src="https://i.imgur.com/XrWzjMI.jpg" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top" rowspan="2">
+                            <p><span>賀！民富國小六年七班參加１１１學年第十四屆教育部中小學生普及化運動大隊接力榮獲新竹市複賽國小Ａ組第四名，感謝黃子芬老師、楊慧敏老師、淑雯校長、家長會龍會長及學務宛蓒主任全程的陪伴與打氣，民富的孩子真是太優秀了！民富好棒！民富加油！</span></p>
+                        </td>
+                        <td>
+                            <a href="https://i.imgur.com/6xay7kY.jpg" target="_blank"><img src="https://i.imgur.com/6xay7kY.jpg" align="right" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://i.imgur.com/7RSXJPl.jpg" target="_blank"><img src="https://i.imgur.com/7RSXJPl.jpg" align="right" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <br>
+            <h4>畢業旅行</h4>
+            <h5>111學年度六年級畢業旅行～駁二特區</h5><a style="font-size: 4.2mm; text-decoration: none;" href="https://schnews.hc.edu.tw/schoolnews_detail.aspx?ID=186497" target="_blank">2023年03月16日發佈</a>
+            <table cellspacing="1" cellpadding="1" width="600" border="0">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="https://i.imgur.com/zynw0zK.jpg" target="_blank"><img src="https://i.imgur.com/zynw0zK.jpg" align="left" style="width:280px;"></a>
+                            <a href="https://i.imgur.com/ufKh3hi.jpg" target="_blank"><img src="https://i.imgur.com/ufKh3hi.jpg" align="right" style="width:280px;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                <span>
+                                    在駁二這個地方，衝突是一股美好的力量。
+                                    <br>
+                                    被歷史塵封的陳舊倉庫，時光凝結了種種發展跡象，因為藝術文化的呼聲被解放，
+                                    <br>
+                                    不斷注入創意靈感而重獲新生，日漸茁壯。在舊與新的衝突中，衝撞出的是勃發的生命力。
+                                    <br>
+                                    位於碼頭旁的倉庫群藝術特區，出出入入的除了車輛還有船舶，湊熱鬧的不只是人群還有海風，
+                                    <br>
+                                    開闊的海天視野一如遼闊無垠的思緒。在海陸交界的衝突裡，寬廣的是耀眼的未來。
+                                    <br>
+                                    （以上內容來自駁二特區官網）
+                                    <br>
+                                    小朋友在駁二特區感受南部熱情的氣溫外，也欣賞特區獨有的美，留下與同學共遊的美好回憶。
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>111學年度六年級畢業旅行～熱鬧的晚會</h5><a style="font-size: 4.2mm; text-decoration: none;" href="https://schnews.hc.edu.tw/schoolnews_detail.aspx?ID=186498" target="_blank">2023年03月16日發佈</a>
+            <table cellspacing="1" cellpadding="3" width="600" border="0">
+                <tbody>
+                    <tr>
+                        <td valign="top">
+                            <a href="https://i.imgur.com/hPA7ss0.jpg" target="_blank"><img src="https://i.imgur.com/hPA7ss0.jpg" align="right" style="width:196px;"></a>
+                        </td>
+                        <td valign="top">
+                            <a href="https://i.imgur.com/Xf99mGT.jpg" target="_blank"><img src="https://i.imgur.com/Xf99mGT.jpg" align="left" style="width:196px;"></a>
+                        </td>
+                        <td valign="top"> 
+                            <a href="https://i.imgur.com/mk250Ad.jpg" target="_blank"><img src="https://i.imgur.com/mk250Ad.jpg" align="left" style="width:196px;"></a>
+                        </td>
+                    </tr>
+                                                                
+                    <tr>
+                        <td valign="top" width="200">
+                            <p>
+                                <span>在義大的晚餐時間結束後，休息片刻，我們在摩天輪</span> 
+                            </p>
+                        </td>
+                        <td valign="top" width="200">
+                            <span>下舉行熱鬧的晚會。主持人金寶非常會炒熱氛，</span>
+                        </td>
+                        <td valign="top" width="200">
+                            <span>現場歡聲雷動，小朋友沉浸在快樂的氛圍中</span>
+                        </td>
+                        </tr>
+                </tbody>
+            </table>
+            <h5>111學年度六年級畢業旅行～校長致詞</h5><a style="font-size: 4.2mm; text-decoration: none;" href="https://schnews.hc.edu.tw/schoolnews_detail.aspx?ID=186499" target="_blank">2023年03月16日發佈</a>
+            <table cellspacing="1" cellpadding="3" width="600" border="0">
+                <tbody>
+                    <tr>
+                        <td valign="top">
+                            <a href="https://i.imgur.com/P43W7wy.jpg" target="_blank"><img src="https://i.imgur.com/P43W7wy.jpg" align="right" style="width:196px;"></a>
+                        </td>
+                        <td valign="top">
+                            <a href="https://i.imgur.com/iIuQycO.jpg" target="_blank"><img src="https://i.imgur.com/iIuQycO.jpg" align="left" style="width:196px;"></a>
+                        </td>
+                        <td valign="top"> 
+                            <a href="https://i.imgur.com/yrJ01Hq.jpg" target="_blank"><img src="https://i.imgur.com/yrJ01Hq.jpg" align="left" style="width:196px;"></a>
+                        </td>
+                    </tr>                                       
+                    <tr>
+                        <td valign="top" width="200">
+                            <p>
+                                <span>炒熱氣氛的晚會，我們請民富的大家長～淑雯校長來跟孩子講幾句話。</span>
+                            </p>
+                        </td>
+                        <td valign="top" width="200">
+                            <span>校長勉勵孩子們要當一個有溫度的人，</span>
+                        </td>
+                        <td valign="top" width="200">
+                            <span>𢤦得感受他人對自己的好，也願意付出對他人好，祝福孩子們</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>111學年度六年級畢業旅行～趣味競賽</h5><a style="font-size: 4.2mm; text-decoration: none;" href="https://schnews.hc.edu.tw/schoolnews_detail.aspx?ID=186500" target="_blank">2023年03月16日發佈</a>
+            <table cellspacing="1" cellpadding="1" width="600" border="0">
+                <tbody>
+                    <tr>
+                        <td valign="top">
+                            <a href="https://i.imgur.com/ogdFNj2.jpg" target="_blank"><img src="https://i.imgur.com/ogdFNj2.jpg" align="left" style="width:400px;"></a>
+                        </td>
+                        <td valign="bottom">
+                            <a href="https://i.imgur.com/4OGdt2o.jpg" target="_blank"><img src="https://i.imgur.com/4OGdt2o.jpg" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top" rowspan="2">
+                            <p><span>在校長的致詞後，主持人邀請各班身手矯健的孩子來玩趣味競賽－接拖鞋。小朋友將臉盆頂在頭上，腳穿拖鞋往上拋，再用臉盆接住它。在限定的時間內，接到最多次的孩子獲勝。恭喜６０６的代表，以１４下奪冠。</span></p>
+                        </td>
+                        <td>
+                            <a href="https://i.imgur.com/VQd3niy.jpg" target="_blank"><img src="https://i.imgur.com/VQd3niy.jpg" align="right" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://i.imgur.com/8UZppGX.jpg" target="_blank"><img src="https://i.imgur.com/8UZppGX.jpg" align="right" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>111學年度六年級畢業旅行～勇敢秀自己</h5><a style="font-size: 4.2mm; text-decoration: none;" href="https://schnews.hc.edu.tw/schoolnews_detail.aspx?ID=186504" target="_blank">2023年03月16日發佈</a>
+            <table cellspacing="1" cellpadding="3" width="600" border="0">
+                <tbody>
+                    <tr>
+                        <td valign="top">
+                            <a href="https://i.imgur.com/PnbpyYu.jpg" target="_blank"><img src="https://i.imgur.com/PnbpyYu.jpg" align="right" style="width:196px;"></a>
+                        </td>
+                        <td valign="top">
+                            <a href="https://i.imgur.com/JrhsAQ6.jpg" target="_blank"><img src="https://i.imgur.com/JrhsAQ6.jpg" align="left" style="width:196px;"></a>
+                        </td>
+                        <td valign="top"> 
+                            <a href="https://i.imgur.com/kayMMvX.jpg" target="_blank"><img src="https://i.imgur.com/kayMMvX.jpg" align="left" style="width:196px;"></a>
+                        </td>
+                    </tr>
+                                                                
+                    <tr>
+                        <td valign="top" width="200">
+                            <p><span>晚會的另一波高潮，是由各班派出一位最敢秀的同學，</span></p>
+                        </td>
+                        <td valign="top" width="200">
+                            <span>配合領隊所下的各式各樣的音樂，秀出最適合的舞姿，</span>
+			            </td>
+                        <td valign="top" width="200">
+                            <span>這１３位同學勇敢的展現自己，大家都給予熱情的回應</span>
+			            </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>111學年度六年級畢業旅行～高歌一曲</h5><a style="font-size: 4.2mm; text-decoration: none;" href="https://schnews.hc.edu.tw/schoolnews_detail.aspx?ID=186505" target="_blank">2023年03月16日發佈</a>
+            <table cellspacing="1" cellpadding="3" width="600" border="0">
+                <tbody>
+                    <tr>
+                        <td valign="top">
+                            <a href="https://i.imgur.com/RLM7tqa.jpg" target="_blank"><img src="https://i.imgur.com/RLM7tqa.jpg" align="right" style="width:196px;"></a>
+                        </td>
+                        <td valign="top">
+                            <a href="https://i.imgur.com/TGFjny5.jpg" target="_blank"><img src="https://i.imgur.com/TGFjny5.jpg" align="left" style="width:196px;"></a>
+                        </td>
+                        <td valign="top"> 
+                            <a href="https://i.imgur.com/Dz1kkiZ.jpg" target="_blank"><img src="https://i.imgur.com/Dz1kkiZ.jpg" align="left" style="width:196px;"></a>
+                        </td>
+                    </tr>                                       
+                    <tr>
+                        <td valign="top" width="200">
+                            <p>
+                                <span>看著孩子們精湛的表現、熱情的回應，老師們派出憲明老師</span>
+                            </p>
+                        </td>
+                        <td valign="top" width="200">
+                            <span>作為代表為大家高歌一曲——用心良苦。唱出老師</span>
+			            </td>
+                        <td valign="top" width="200">
+                            <span>對孩子們的諄諄教誨和用心良苦，又將晚會推向高潮。</span>
+			            </td>
+                        </tr>
+                </tbody>
+            </table>
+            <h5>111學年度六年級畢業旅行～感性時刻</h5><a style="font-size: 4.2mm; text-decoration: none;" href="https://schnews.hc.edu.tw/schoolnews_detail.aspx?ID=186506" target="_blank">2023年03月16日發佈</a>
+            <table cellspacing="1" cellpadding="1" width="600" border="0">
+                <tbody>
+                    <tr>
+                        <td valign="top">
+                            <a href="https://i.imgur.com/8CO3fUl.jpg" target="_blank"><img src="https://i.imgur.com/8CO3fUl.jpg" align="left" style="width:400px;"></a>
+                        </td>
+                        <td valign="bottom">
+                            <a href="https://i.imgur.com/zrTM7Lf.jpg" target="_blank"><img src="https://i.imgur.com/zrTM7Lf.jpg" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top" rowspan="2">
+                            <p>
+                                <span>
+                                    熱鬧的晚會來到尾聲，這時響起抒情歌，主持人帶著孩子回想從小一入學到六年級的點點滴滴回憶，在這六年之間要感恩的對象，家人、朋友和老師，因為有他們，才有現在的我們。孩子們低著頭回想，想到即將畢業，眼淚不禁掉下來。
+                                    <br>
+                                    天下有不散的宴席，祝福大家在未來的日子裡，想起國小的點點滴滴，都能為他帶來勇氣。
+                                </span>
+                            </p>
+                        </td>
+                        <td>
+                            <a href="https://i.imgur.com/pmLFXsR.jpg" target="_blank"><img src="https://i.imgur.com/pmLFXsR.jpg" align="right" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://i.imgur.com/hAkwlB2.jpg" target="_blank"><img src="https://i.imgur.com/hAkwlB2.jpg" align="right" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>111學年度六年級畢業旅行～巡房關心</h5><a style="font-size: 4.2mm; text-decoration: none;" href="https://schnews.hc.edu.tw/schoolnews_detail.aspx?ID=186507" target="_blank">2023年03月16日發佈</a>
+            <table cellspacing="1" cellpadding="1" width="600" border="0">
+                <tbody>
+                    <tr>
+                        <td style="width: 600px" valign="top" align="center" colspan="3">
+                            <a href="https://i.imgur.com/2EfcVCQ.jpg" target="_blank"><img src="https://i.imgur.com/2EfcVCQ.jpg" style="width:350px;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 600px" valign="top" colspan="3">
+                            <p>
+                                <span>晚會結束後，孩子們回到房間進行盥洗，老師們也一間一間的關心孩子們，提醒孩子們早點休息，準備迎接明天的樂園行程，看著孩子們在沒有家長的陪伴下，都可以把自己打理的很好，他們真的長大了！</span>
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>111學年度六年級畢業旅行～檢討會議</h5><a style="font-size: 4.2mm; text-decoration: none;" href="https://schnews.hc.edu.tw/schoolnews_detail.aspx?ID=186509" target="_blank">2023年03月16日發佈</a>
+            <table cellspacing="0" rules="all" border="1" width="600px" style="border-collapse:collapse;">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="https://i.imgur.com/TVA8Yp7.jpg" target="_blank"><img src="https://i.imgur.com/TVA8Yp7.jpg" align="left" style="width:280px;"></a>
+                            <a href="https://i.imgur.com/FDBgf55.jpg" target="_blank"><img src="https://i.imgur.com/FDBgf55.jpg" align="right" style="width:280px;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                <span>
+                                    晚會結束後，隨行師長們聚集在一起，討論今天的行程，師長們對於領隊掌控時間的精準度，稱讚不已，６０５的領隊哥哥很有能力，帶領學生參與活動，受到導師大力推薦，總領隊也回饋學生都很乖巧，謝謝老師們的指導與鼓勵。
+                                    <br>
+                                    明天的行程還是很緊湊，師長們要聚精會神，繼續陪伴學生們收集美好回憶。
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>111學年度六年級畢業旅行～豐盛早餐</h5><a style="font-size: 4.2mm; text-decoration: none;" href="https://schnews.hc.edu.tw/schoolnews_detail.aspx?ID=186511" target="_blank">2023年03月17日發佈</a>
+            <table cellspacing="1" cellpadding="1" width="600" border="0">
+                <tbody>
+                    <tr>
+                        <td valign="top">
+                            <a href="https://i.imgur.com/LDaVuUL.jpg" target="_blank"><img src="https://i.imgur.com/LDaVuUL.jpg" align="left" style="width:400px;"></a>
+                        </td>
+                        <td valign="bottom">
+                            <a href="https://i.imgur.com/uF3m4Qe.jpg" target="_blank"><img src="https://i.imgur.com/uF3m4Qe.jpg" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top" rowspan="2">
+                            <p><span>在義大天悅休息一晚，早上迎接他們的是豐盛的早餐。早餐吃得飽，才有力氣好好征服樂園。</span></p>
+                        </td>
+                        <td>
+                            <a href="https://i.imgur.com/YepMgEk.jpg" target="_blank"><img src="https://i.imgur.com/YepMgEk.jpg" align="right" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://i.imgur.com/aJ6RXxu.jpg" target="_blank"><img src="https://i.imgur.com/aJ6RXxu.jpg" align="right" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <br>
+            <h4 id="trackandfield">田徑</h4>
+            <h5>民富國小田徑隊參加新竹市111年全市運動會田徑錦標賽 3</h5><a style="font-size: 4.2mm; text-decoration: none;" href="https://schnews.hc.edu.tw/schoolnews_detail.aspx?ID=181129" target="_blank">2022年09月28日發佈</a>
+            <table cellspacing="1" cellpadding="1" width="600" border="0">
+                <tbody>
+                    <tr>
+                        <td valign="top">
+                            <a href="https://i.imgur.com/iAJJ3KM.jpg" target="_blank"><img src="https://i.imgur.com/iAJJ3KM.jpg" align="left" style="width:400px;"></a>
+                        </td>
+                        <td valign="bottom">
+                            <a href="https://i.imgur.com/WG4KCMD.jpg" target="_blank"><img src="https://i.imgur.com/WG4KCMD.jpg" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top" rowspan="2">
+                            <p><span>本校田徑隊參加「新竹市立成德高中校慶４００公尺接力邀請賽」１１月１１日在新竹市立成德高中大操場舉行。感謝帶隊楊慧敏老師、曾華陽老師及到場協助幫忙的家長，謝謝大家！預祝小選手有好的成績，民富勁旅、民富加油！</span></p>
+                        </td>
+                        <td>
+                            <a href="https://i.imgur.com/KP1TXYV.jpg" target="_blank"><img src="https://i.imgur.com/KP1TXYV.jpg" align="right" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://i.imgur.com/genM9uK.jpg" target="_blank"><img src="https://i.imgur.com/genM9uK.jpg" align="right" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>民富國小田徑隊參加新竹市111年全市運動會田徑錦標賽 4</h5><a style="font-size: 4.2mm; text-decoration: none;" href="https://schnews.hc.edu.tw/schoolnews_detail.aspx?ID=181132" target="_blank">2022年09月28日發佈</a>
+            <table cellspacing="1" cellpadding="1" width="600" border="0">
+                <tbody>
+                    <tr>
+                        <td valign="top">
+                            <a href="https://i.imgur.com/cYER985.jpg" target="_blank"><img src="https://i.imgur.com/cYER985.jpg" align="left" style="width:400px;"></a>
+                        </td>
+                        <td valign="bottom">
+                            <a href="https://i.imgur.com/OjihxUQ.jpg" target="_blank"><img src="https://i.imgur.com/OjihxUQ.jpg" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top" rowspan="2">
+                            <p><span>「新竹市１１１年全市運動會田徑錦標賽」圓滿落幕，從計畫、訓練、執行、規畫、戰術模擬到比賽，最感謝平常辛苦練習的慧敏老師、華陽老師及協助訓練的文明老師。感謝淑雯校長、宛蓒主任、帶隊指導老師及協助幫忙、加油的家長們，感謝大家、謝謝你們！最愛民富、民富有勁、民富加油。</span></p>
+                        </td>
+                        <td>
+                            <a href="https://i.imgur.com/qkwekmh.jpg" target="_blank"><img src="https://i.imgur.com/qkwekmh.jpg" align="right" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://i.imgur.com/3BZGNJL.jpg" target="_blank"><img src="https://i.imgur.com/3BZGNJL.jpg" align="right" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>民富國小田徑隊參加「新竹市立成德高中校慶400公尺接力邀請賽」</h5><a style="font-size: 4.2mm; text-decoration: none;" href="https://schnews.hc.edu.tw/schoolnews_detail.aspx?ID=182772" target="_blank">2022年11月14日發佈</a>
+            <table cellspacing="1" cellpadding="1" width="600" border="0">
+                <tbody>
+                    <tr>
+                        <td valign="top">
+                            <a href="https://i.imgur.com/yaCD7t3.jpg" target="_blank"><img src="https://i.imgur.com/yaCD7t3.jpg" align="left" style="width:400px;"></a>
+                        </td>
+                        <td valign="bottom">
+                            <a href="https://i.imgur.com/tq1xOH6.jpg" target="_blank"><img src="https://i.imgur.com/tq1xOH6.jpg" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top" rowspan="2">
+                            <p><span>本校田徑隊參加「新竹市立成德高中校慶４００公尺接力邀請賽」１１月１１日在新竹市立成德高中大操場舉行。感謝帶隊楊慧敏老師、曾華陽老師及到場協助幫忙的家長，謝謝大家！預祝小選手有好的成績，民富勁旅、民富加油！</span></p>
+                        </td>
+                        <td>
+                            <a href="https://i.imgur.com/Y47xNh0.jpg" target="_blank"><img src="https://i.imgur.com/Y47xNh0.jpg" align="right" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://i.imgur.com/x6EFdZ8.jpg" target="_blank"><img src="https://i.imgur.com/x6EFdZ8.jpg" align="right" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>民富國小田徑隊參加「新竹市立虎林國中校慶800公尺接力邀請賽」</h5><a style="font-size: 4.2mm; text-decoration: none;" href="https://schnews.hc.edu.tw/schoolnews_detail.aspx?ID=182773" target="_blank">2022年11月14日發佈</a>
+            <table cellspacing="1" cellpadding="1" width="600" border="0">
+                <tbody>
+                    <tr>
+                        <td valign="top">
+                            <a href="https://i.imgur.com/PkVyK7f.jpg" target="_blank"><img src="https://i.imgur.com/PkVyK7f.jpg" align="left" style="width:400px;"></a>
+                        </td>
+                        <td valign="bottom">
+                            <a href="https://i.imgur.com/o9yOwZR.jpg" target="_blank"><img src="https://i.imgur.com/o9yOwZR.jpg" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top" rowspan="2">
+                            <p><span>本校田徑隊參加「新竹市立虎林國中校慶８００公尺接力邀請賽」１１月１２日在新竹市立虎林國中大操場舉行。感謝帶隊楊慧敏老師、曾華陽老師及到場協助幫忙的家長，謝謝大家！預祝小選手有好的成績，民富勁旅、民富加油！</span></p>
+                        </td>
+                        <td>
+                            <a href="https://i.imgur.com/RenR16l.jpg" target="_blank"><img src="https://i.imgur.com/RenR16l.jpg" align="right" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://i.imgur.com/wyoUypC.jpg" target="_blank"><img src="https://i.imgur.com/wyoUypC.jpg" align="right" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>民富國小田徑隊參加「新竹市立虎林國中校慶800公尺接力邀請賽」2</h5><a style="font-size: 4.2mm; text-decoration: none;" href="https://schnews.hc.edu.tw/schoolnews_detail.aspx?ID=182774" target="_blank">2022年11月14日發佈</a>
+            <table cellspacing="1" cellpadding="1" width="600" border="0">
+                <tbody>
+                    <tr>
+                        <td valign="top">
+                            <a href="https://i.imgur.com/SHg66S7.jpg" target="_blank"><img src="https://i.imgur.com/SHg66S7.jpg" align="left" style="width:400px;"></a>
+                        </td>
+                        <td valign="bottom">
+                            <a href="https://i.imgur.com/BXcq5Ox.jpg" target="_blank"><img src="https://i.imgur.com/BXcq5Ox.jpg" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top" rowspan="2">
+                            <p><span>本校田徑隊參加「新竹市立虎林國中校慶８００公尺接力邀請賽」１１月１２日在新竹市立虎林國中大操場舉行，榮獲國小男生組第一名、國小女生組第三名。感謝帶隊楊慧敏老師、曾華陽老師及到場協助幫忙的家長，謝謝大家！民富勁旅、民富加油！</span></p>
+                        </td>
+                        <td>
+                            <a href="https://i.imgur.com/gmZzLUO.jpg" target="_blank"><img src="https://i.imgur.com/gmZzLUO.jpg" align="right" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://i.imgur.com/hipLOlV.jpg" target="_blank"><img src="https://i.imgur.com/hipLOlV.jpg" align="right" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>民富國民小學112年寒假體育團隊快樂開訓/田徑隊訓練</h5><a style="font-size: 4.2mm; text-decoration: none;" href="https://schnews.hc.edu.tw/schoolnews_detail.aspx?ID=184913" target="_blank">2023年01月31日發佈</a>
+            <table cellspacing="1" cellpadding="1" width="600" border="0">
+                <tbody>
+                    <tr>
+                        <td style="width: 600px" valign="top" colspan="3">
+                            <a href="https://i.imgur.com/6LWFvDK.jpg" target="_blank"><img src="https://i.imgur.com/6LWFvDK.jpg" align="left" style="width:250px;"></a>                    
+                            <p><span>田徑運動是人類與生俱來的活動，包括賽跑、跳躍、投擲等能力，是人類運動能力的基本組成，也是古代各民族用以謀生的技能。本校積極推廣田徑運動，１１２年１月３０日至２月６日為期１０天展開寒假訓練，由慧敏老師、華陽老師指導，加強鍛鍊田徑基本體能及專項技巧，備戰開學後的新竹市１１２年中小學田徑錦標賽，期待他們能為校爭取最高榮譽。感謝慧敏老師、華陽老師，專注於學生跑步與跳遠的步伐基本動作及姿勢，都指導得十分精確，孩子們也能快速上手、調整自己的錯誤姿勢，由其特別指導大家練習核心肌群的基礎訓練、馬克操協調動作，孩子們更懂得今日吃苦與辛勞的汗水，能迎來他日的成功的道理。民富徑旅、民富加油！</span></p>
+                        </td>
+                </tbody>
+            </table>
+            <h5>民富國小田徑隊參加「新竹市112年中小學聯合運動會田徑錦標賽」</h5><a style="font-size: 4.2mm; text-decoration: none;" href="https://schnews.hc.edu.tw/schoolnews_detail.aspx?ID=186258" target="_blank">2023年03月10日發佈</a>
+            <table cellspacing="1" cellpadding="1" width="600" border="0">
+                <tbody>
+                    <tr>
+                        <td valign="top">
+                            <a href="https://i.imgur.com/3sW8ia5.jpg" target="_blank"><img src="https://i.imgur.com/3sW8ia5.jpg" align="left" style="width:400px;"></a>
+                        </td>
+                        <td valign="bottom">
+                            <a href="https://i.imgur.com/m7PYhyB.jpg" target="_blank"><img src="https://i.imgur.com/m7PYhyB.jpg" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top" rowspan="2">
+                            <p><span>本校田徑隊參加「新竹市１１２年中小學聯合運動會田徑錦標賽」，３／７～９為期三天在新竹市立體育場舉行。感謝帶隊楊慧敏老師、曾華陽老師、宋威慶老師及到場協助幫忙的家長，謝謝大家！預祝小選手有好的成績，民富有徑、民富加油！</span></p>
+                        </td>
+                        <td>
+                            <a href="https://i.imgur.com/fEWscg2.jpg" target="_blank"><img src="https://i.imgur.com/fEWscg2.jpg" align="right" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://i.imgur.com/m6pUQS8.jpg" target="_blank"><img src="https://i.imgur.com/m6pUQS8.jpg" align="right" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>民富國小田徑隊參加「新竹市112年中小學聯合運動會田徑錦標賽」2</h5><a style="font-size: 4.2mm; text-decoration: none;" href="https://schnews.hc.edu.tw/schoolnews_detail.aspx?ID=186259" target="_blank">2023年03月10日發佈</a>
+            <table cellspacing="1" cellpadding="1" width="600" border="0">
+                <tbody>
+                    <tr>
+                        <td valign="top">
+                            <a href="https://i.imgur.com/QhdSL6C.jpg" target="_blank"><img src="https://i.imgur.com/QhdSL6C.jpg" align="left" style="width:400px;"></a>
+                        </td>
+                        <td valign="bottom">
+                            <a href="https://i.imgur.com/1wmA1BY.jpg" target="_blank"><img src="https://i.imgur.com/1wmA1BY.jpg" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top" rowspan="2">
+                            <p><span>本校田徑隊參加「新竹市１１２年中小學聯合運動會田徑錦標賽」，感謝田徑隊指導老師楊慧敏老師、曾華陽老師、宋威慶老師平時辛勤指導、各班導師的支持、家長們的鼓勵及協助幫忙。特別感謝淑雯校長看到學生們的努力，特別交待購買運動飲料為小朋友加油，每位學生都感受到校長的愛心。預祝田徑隊小朋友成績優異，民富好徑、民富加油！</span></p>
+                        </td>
+                        <td>
+                            <a href="https://i.imgur.com/Rh2cKCz.jpg" target="_blank"><img src="https://i.imgur.com/Rh2cKCz.jpg" align="right" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://i.imgur.com/DKEJlnQ.jpg" target="_blank"><img src="https://i.imgur.com/DKEJlnQ.jpg" align="right" style="width:200px;"></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>民富國小田徑隊參加「新竹市112年中小學聯合運動會田徑錦標賽」3</h5><a style="font-size: 4.2mm; text-decoration: none;" href="https://schnews.hc.edu.tw/schoolnews_detail.aspx?ID=186260" target="_blank">2023年03月10日發佈</a>
+            <table cellspacing="1" cellpadding="3" width="600" border="0">
+                <tbody>
+                    <tr>
+                        <td valign="top">
+                            <a href="https://i.imgur.com/fR1adnL.jpg" target="_blank"><img src="https://i.imgur.com/fR1adnL.jpg" align="right" style="width:196px;"></a>
+                        </td>
+                        <td valign="top">
+                            <a href="https://i.imgur.com/roJmnsi.jpg" target="_blank"><img src="https://i.imgur.com/roJmnsi.jpg" align="left" style="width:196px;"></a>
+                        </td>
+                        <td valign="top">
+                            <a href="https://i.imgur.com/0utfVdr.jpg" target="_blank"><img src="https://i.imgur.com/0utfVdr.jpg" align="left" style="width:196px;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top" width="200">
+                            <p><span>本校田徑隊參加「新竹市１１２年中小學聯合運動會田徑錦標賽」第一天跳遠賽程榮獲佳績，</span></p>
+                        </td>
+                        <td valign="top" width="200">
+                            <span>國小男甲組跳遠紀宇謙同學榮獲第五名成績４．２７公尺，</span>
+                        </td>
+                        <td valign="top" width="200">
+                            <span>感謝到場協助幫忙的家長及感謝帶隊慧敏老師、華陽老師。民富好徑、民富加油</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <br>
+            <h3 id="graduation">畢業典禮</h3>
+            <iframe width="300" height="250" src="https://naozhong.tw/embed/jishiqi/#date=2023-06-19T08:00:00&title=%E7%95%A2%E6%A5%AD%E5%85%B8%E7%A6%AE&theme=0&ampm=1&sound=xylophone" frameborder="0" allowfullscreen></iframe>
+
+
+
+
+
+        </center>
+    </body>
+</html>
